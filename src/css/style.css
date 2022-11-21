@@ -135,7 +135,7 @@ html {
   font-size: 100%;
   overflow-x: hidden;
   font-family: "Open Sans", sans-serif;
-  background-color: hsl(0deg, 5%, 95%);
+  background-color: hsl(60deg, 17%, 91%);
 }
 
 .body {
@@ -151,12 +151,13 @@ html {
 }
 
 header {
-  min-height: 90vh;
-  width: 100%;
   display: grid;
-  align-items: center;
-  justify-content: center;
-  position: relative;
+}
+
+nav ul {
+  display: flex;
+  list-style-type: none;
+  gap: 2rem;
 }
 
 footer {
