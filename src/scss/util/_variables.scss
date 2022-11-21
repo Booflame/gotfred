@@ -1,0 +1,19 @@
+//  COLORS
+
+$black: hsl(0, 5%, 10%);
+$white: hsl(0, 0%, 95%);
+$accent: hsl(263 62% 49%);
+
+$size: 1.5rem;
+$radius: 0.2em;
+$transtion_speed_fast: 200ms;
+$transtion_speed_slow: 400ms;
+$transtion_type_squish: cubic-bezier(0.86, -0.1, 0.27, 1.15);
+    
+
+//  BREAKPOINTS
+
+$breakpoints: (
+    small: 38em,    // 448px    =   28*16px     biggest phone Iphone 12 pro max viewport is 428px width
+    large: 65em     // 1040px   =   65*16px     biggest tablet Ipad pro viewport is 1024px width
+) !default;

@@ -1,0 +1,17 @@
+@use "../util" as u;
+
+#preloader{
+    height: 100vh;
+    width: 100vw;
+    position: fixed;
+    z-index: 999;
+    // background-image: url(../media/preloader_melting.gif);
+    background-position: center;
+    background-size: 200%;
+    background-color: #0e1120;
+    background-repeat: no-repeat;
+
+    @include u.mq(small){
+        background-size: 50%;
+    }
+}

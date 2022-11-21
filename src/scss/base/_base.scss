@@ -1,0 +1,23 @@
+@use "../util" as u;
+
+:root{
+}
+
+html{
+    font-size: 100%;
+    overflow-x: hidden;
+    font-family: 'Open Sans', sans-serif;
+    background-color: hsl(0 5% 95%)
+}
+
+.body{
+    display: grid;
+    grid-template-rows: auto 1fr auto;
+}
+
+.wrapper{
+    margin-inline: auto;
+    padding-inline: 2rem;
+    width: 100%;
+    max-width: 80rem;
+}
