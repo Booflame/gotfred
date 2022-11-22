@@ -1,6 +1,5 @@
 export default function Menuitem (props){
 
-
     let image = props.image;
 
     if(props.image === undefined){

@@ -261,6 +261,11 @@ footer {
   display: none;
 }
 
+/*new burger*/
+.newburger.active {
+  stroke: red;
+}
+
 #preloader {
   height: 100vh;
   width: 100vw;

@@ -8,11 +8,3 @@
         @content;
     }
 }
-
-@function bhsl($color, $opacity) {
-    @if $opacity == true {
-        @return hsla($color / $opacity);
-    } @else {
-        @return hsl($color);
-    }
-}

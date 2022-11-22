@@ -59,3 +59,9 @@ $whitespace: 7px;
 .burger[aria-expanded="true"] .inner-burger::after {
     display: none;
 }
+
+
+/*new burger*/
+.newburger.active{
+    stroke: red;
+}
