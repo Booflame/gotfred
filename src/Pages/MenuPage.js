@@ -15,7 +15,11 @@ export default function MenuPage() {
                         <h2>hindbaertaerte</h2>
                     </div>
                     <div className="menu-item">
-                        <h2>yulekrans</h2>
+                        <h2> 
+                            <span className="menu-item-description">yulekrans</span>
+                            <span className="menu-item-dots"></span>
+                            <span className="menu-item-price">35</span>
+                        </h2>
                     </div>
                 </div>
             </div>
