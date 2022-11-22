@@ -145,7 +145,7 @@ html {
 
 .wrapper {
   margin-inline: auto;
-  padding-inline: 2rem;
+  padding-inline: 1.5rem;
   width: 100%;
   max-width: 80rem;
 }
@@ -162,27 +162,9 @@ nav ul {
 
 footer {
   min-height: 100px;
-  background-color: hsl(0deg, 5%, 10%);
+  background-color: transparent;
   -webkit-padding-after: 2rem;
           padding-block-end: 2rem;
-  color: hsl(263deg, 62%, 49%);
-}
-footer h2 {
-  font-size: 2rem;
-  text-align: center;
-  -webkit-margin-after: 1rem;
-          margin-block-end: 1rem;
-}
-footer .socials a:hover svg, footer .socials a:focus svg, footer .socials a:focus-visible svg {
-  fill: hsl(0deg, 0%, 95%);
-  transform: scale(1.1);
-}
-footer .socials svg {
-  width: 50px;
-  fill: hsl(263deg, 62%, 49%);
-  transition-property: fill, transform;
-  transition-timing-function: ease-in-out;
-  transition-duration: 150ms;
 }
 
 .menu-container {
@@ -196,24 +178,30 @@ footer .socials svg {
 .menu-item {
   font-size: 1.2rem;
   line-height: 1.5rem;
+  display: grid;
+  grid-template-columns: 1fr 3fr;
+  gap: 1rem;
 }
 .menu-item h2 {
   display: grid;
   grid-template-columns: auto 1fr auto;
 }
+.menu-item h2 > * {
+  align-self: end;
+}
 .menu-item-description {
-  margin-right: 4px;
+  margin-right: 0.5rem;
 }
 .menu-item-dots {
   width: 100%;
-  border-bottom: 6px dotted #000;
+  border-bottom: 4px dotted #000;
 }
 .menu-item-price {
-  padding-left: 4px;
+  padding-left: 0.5rem;
 }
 .menu-item-price::after {
   content: "kr.";
-  margin-left: 4px;
+  margin-left: 0.2em;
 }
 
 .burger {

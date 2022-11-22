@@ -10,26 +10,38 @@
     font-size: 1.2rem;
     line-height: 1.5rem;
 
+    display: grid;
+    grid-template-columns: 1fr 3fr;
+    gap: 1rem;
+
+    &-image{
+        
+    }
+
     h2{
         display: grid;
         grid-template-columns: auto 1fr auto;
+
+        > *{
+            align-self: end;
+        }
     }
     
     &-description{
-        margin-right: 4px;
+        margin-right: .5rem;
     }
 
     &-dots{
         width: 100%;
-        border-bottom: 6px dotted #000;
+        border-bottom: 4px dotted #000;
     }
 
     &-price{
-        padding-left: 4px;
+        padding-left: .5rem;
 
         &::after{
             content: "kr.";
-            margin-left: 4px;
+            margin-left: .2em;
         }
     }
 }

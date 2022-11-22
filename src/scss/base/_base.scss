@@ -1,6 +1,5 @@
-@use "../util" as u;
-
 :root{
+    
 }
 
 html{
@@ -17,7 +16,7 @@ html{
 
 .wrapper{
     margin-inline: auto;
-    padding-inline: 2rem;
+    padding-inline: 1.5rem;
     width: 100%;
     max-width: 80rem;
 }

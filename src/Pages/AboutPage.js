@@ -2,7 +2,9 @@ export default function AboutPage() {
 
     return(
         <>
-            <h1>Om os side</h1>
+            <div className="wrapper">
+                <h1>Om os side</h1>
+            </div>
         </>
     )
 }

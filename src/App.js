@@ -1,6 +1,7 @@
 import React from 'react';
 import { Navigate, Route, Routes } from "react-router-dom";
 import Header from "./Components/Header";
+import Footer from "./Components/Footer";
 import HomePage from "./Pages/HomePage";
 import MenuPage from "./Pages/MenuPage";
 import AboutPage from "./Pages/AboutPage";
@@ -18,6 +19,7 @@ export default function App() {
           <Route path="Contact" element={<ContactPage />}></Route>
           <Route path="*" element={<Navigate to="/" />}></Route>
       </Routes>
+      <Footer />
     </>
   )
 }
