@@ -262,6 +262,10 @@ footer {
 }
 
 /*new burger*/
+.newburger {
+  transition: 500ms ease;
+}
+
 .newburger.active {
   stroke: red;
 }
