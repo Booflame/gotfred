@@ -1,9 +1,9 @@
-export default function ContactPage() {
+export default function OrderPage() {
 
     return(
         <>
             <div className="wrapper">
-                <h1>Kontakt os</h1>
+                <h1>Start din ordre her</h1>
             </div>
         </>
     )

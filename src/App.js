@@ -3,9 +3,9 @@ import { Navigate, Route, Routes } from "react-router-dom";
 import Header from "./Components/Header";
 import Footer from "./Components/Footer";
 import HomePage from "./Pages/HomePage";
-import MenuPage from "./Pages/MenuPage";
-import AboutPage from "./Pages/AboutPage";
-import ContactPage from "./Pages/ContactPage";
+import MenuPage from "./Pages/AssortmentPage";
+import OrderPage from "./Pages/OrderPage";
+import CheckoutPage from "./Pages/CheckoutPage";
 
 
 export default function App() {
@@ -14,9 +14,9 @@ export default function App() {
       <Header />
       <Routes>
           <Route path="/" element={<HomePage />}></Route>
-          <Route path="Menu" element={<MenuPage />}></Route>
-          <Route path="About" element={<AboutPage />}></Route>
-          <Route path="Contact" element={<ContactPage />}></Route>
+          <Route path="Assortment" element={<MenuPage />}></Route>
+          <Route path="Order" element={<OrderPage />}></Route>
+          <Route path="Checkout" element={<CheckoutPage />}></Route>
           <Route path="*" element={<Navigate to="/" />}></Route>
       </Routes>
       <Footer />

@@ -1,0 +1,32 @@
+form{
+
+    input, textarea{
+        width: 60%;
+        padding-block: .3em;
+        padding-inline-start: .3em;
+    }
+
+
+    .radio-wrapper{
+
+        margin-block: 1.4rem;
+
+        label{
+            background-color: lightblue;
+            border-radius: 10px;
+            padding: 10px 20px;
+        }
+
+        input{
+            display: none;
+
+            &:checked ~ label{
+                background-color: aquamarine;
+            }
+        }
+    }
+
+    h2{
+        font-size: 1.2rem;
+    }
+}
