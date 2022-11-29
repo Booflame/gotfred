@@ -10,11 +10,8 @@ export default function Menuitem (props){
         <>
             <div className="menu-item">
                 <img className="menu-item-image" src={`./assets/${image}.jpg`} alt={props.name}/>
-                <h2> 
-                    <span className="menu-item-description">{props.name}</span>
-                    <span className="menu-item-dots"></span>
-                    <span className="menu-item-price">48</span>
-                </h2>
+                <h2 className="menu-item-title">{props.name}</h2>
+                <p className="menu-item-desc">{props.desc}</p>
             </div>
         </>
     )
