@@ -12,7 +12,7 @@ export default function Banner (props){
                 <picture className="banner-img">
                     <img src={`./assets/${image}.jpg`}  alt="banner"/>
                 </picture>
-                <h1>Vores menu</h1>
+                <h1>{props.name}</h1>
             </div>
         </>
     )

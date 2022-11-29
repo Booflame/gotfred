@@ -6,8 +6,8 @@ export default function MenuPage() {
 
     return(
         <>
+            <Banner name="Kager" image="banner_kage"/>
             <div className="wrapper">
-                <Banner image="banner_kage"/>
                 <section className="section-intro">
                     <div className="title-box">
                         <h2>Portionskager</h2>

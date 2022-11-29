@@ -63,10 +63,6 @@ $whitespace: 7px;
 
 /*new burger*/
 
-.newburger{
+.newburger svg{
     transition: 500ms ease;
-}
-
-.newburger.active{
-    stroke: red;
 }

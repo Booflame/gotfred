@@ -13,8 +13,8 @@ export default function Burger (){
 
     return(
         <>
-            <button type="button">
-                <svg className={classToggle ? "newburger active" : "newburger"} onClick={handleClick} viewBox={`0 0 ${width} ${width}`} width={width} height={width} stroke="black">
+            <button type="button" className="newburger" onClick={handleClick} aria-expanded={classToggle ? "false" : "true"}>
+                <svg viewBox={`0 0 ${width} ${width}`} width={width} height={width} stroke="black">
                     <path className="line top" d={`M 0 10 h ${topLine}`}/>
                     <path className="line mid" d={`M 0 30 h ${width}`}/>
                     <path className="line bot" d={`M 0 50 h ${botLine}`}/>
