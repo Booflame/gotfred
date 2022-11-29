@@ -1,39 +1,26 @@
 import Menuitem from "../Components/Menuitem";
+import Priceitem from "../Components/Priceitem";
+import Banner from "../Components/Banner";
 
 export default function MenuPage() {
 
     return(
         <>
             <div className="wrapper">
-                <div className="banner">
-                    <picture className="banner-img">
-                        <img src="./assets/banner_kage.jpg" alt="banner"/>
-                    </picture>
-                    <h1>Vores menu</h1>
-                </div>
-                <div className="menu-intro">
-                    <h2>Portionskager</h2>
+                <Banner image="banner_kage"/>
+                <section className="section-intro">
+                    <div className="title-box">
+                        <h2>Portionskager</h2>
+                    </div>
                     <p>Vores portionskager består af seks forskellige varianter samt én sæsonkage. Vi har udviklet hver kage til at have sin helt egen unikke smag og er lavet med friske ingredienser af højeste kvalitet. </p>
-                </div>
-                <div className="price-section">
-                    <h2>Priser</h2>
-                    <div className="price-container">
-                        <p className="price-container-item">Én kage</p>
-                        <p className="price-container-price">48</p>
-                    </div>
-                    <div className="price-container">
-                        <p className="price-container-item">Kaffe & kage</p>
-                        <p className="price-container-price">83</p>
-                    </div>
-                    <div className="price-container">
-                        <p className="price-container-item">Mix box 4</p>
-                        <p className="price-container-price">188</p>
-                    </div>
-                    <div className="price-container">
-                        <p className="price-container-item">Mix box 6</p>
-                        <p className="price-container-price">280</p>
-                    </div>
-                </div>
+                </section>
+                <section className="price-section">
+                    <h3>Priser</h3>
+                    <Priceitem name="Én kage" price="48"/>
+                    <Priceitem name="Kaffe & kage" price="83"/>
+                    <Priceitem name="Mix box 4" price="188"/>
+                    <Priceitem name="Mix box 6" price="280"/>
+                </section>
                 <div className="limited-menu-container">
                     <Menuitem name="yulekrans" desc="ginger bread, vanilje panna cotta, glögg og kirsebaer gel, chokolade chai creme"/>
                 </div>
@@ -45,6 +32,13 @@ export default function MenuPage() {
                     <Menuitem name="fragilité" image="fragilite" desc="hasselnoed, kaffe, nougat"/>
                     <Menuitem name="solbaerkage" desc="solbaer, lakrids, chokolade brownie"/>
                 </div>
+                <section className="section-intro">
+                    <div className="title-box">
+                        <h2>Petite Mix</h2>
+                    </div>
+                    <p>Vores petite mix gælder kun forudbestilling og består af fire mindre, men lige så lækre mundfulde. </p>
+                    <p>Bestil dem i en pakke af mindst 10 og glæd dine gæster, kolleger eller familie med lidt til den søde tand.</p>
+                </section>
             </div>
         </>
     )

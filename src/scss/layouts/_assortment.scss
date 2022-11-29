@@ -1,13 +1,69 @@
+.price-section{
+    display: flex;
+    flex-direction: column;
+    gap: 1rem;
+    margin-block: 1rem;
+
+    h3{
+        font-size: 1.6rem;
+        text-align: center;
+        color: var(--accent);
+    }
+}
+
+.price-container{
+    display: flex;
+    justify-content: space-between;
+    outline: 1px solid var(--accent);
+    padding: 0.3em;
+    color: var(--accent);
+    font-style: italic;
+
+    &-price{
+
+        &::after{
+            content: "kr.";
+            margin-inline-start: 0.1em;
+        }
+    }
+}
+
+.section-intro{
+
+    color: var(--accent);
+}
+
+.title-box{
+    display: flex;
+    justify-content: center;
+
+    h2{
+        position: relative;
+        display: inline-block;
+        margin-bottom: 1.2rem;
+        font-size: 1.8rem;
+
+        &::after{
+            content: "";
+            width: 120%;
+            height: 2px;
+            background-color: var(--accent);
+            position: absolute;
+            top: 100%;
+            left: 50%;
+            transform: translate(-50%, 0);
+        } 
+    }
+}
+
 .menu-container{
-    font-family: 'Comic Neue', cursive;
     padding-block: 2rem;
     display: grid;
     grid-template-columns: repeat(2, 1fr);
-    gap: 2rem;
+    gap: 1.2rem;
 }
 
 .limited-menu-container{
-
 
     .menu-item{
 
@@ -21,36 +77,9 @@
 
 .menu-item{
     display: grid;
-    gap: 1rem;
-
-    &-image{
-        
-    }
+    color: var(--accent);
     
     &-description{
         margin-right: .5rem;
-    }
-}
-
-.price-section{
-    display: flex;
-    flex-direction: column;
-    gap: 1rem;
-    margin-block: 1rem;
-}
-
-.price-container{
-    display: flex;
-    justify-content: space-between;
-    outline: 1px solid var(--accent);
-    padding: 0.3em;
-    color: var(--accent);
-
-    &-price{
-
-        &::after{
-            content: "kr.";
-            margin-inline-start: 0.1em;
-        }
     }
 }
