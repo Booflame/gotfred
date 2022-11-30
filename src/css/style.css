@@ -180,6 +180,40 @@ footer {
           padding-block-end: 2rem;
 }
 
+.selection-wrapper {
+  display: flex;
+  flex-direction: column;
+  gap: 2rem;
+  margin-top: 2rem;
+}
+.selection-wrapper .selection-link {
+  display: inline-block;
+  width: 100%;
+  background-color: red;
+  text-align: center;
+  padding: 3rem;
+  border-radius: 30px;
+  color: #fff;
+  font-size: 2.2rem;
+  text-decoration: none;
+  filter: brightness(80%);
+}
+.selection-wrapper .cakes {
+  background-image: url(../images/cakes.jpg);
+  background-position: center;
+  background-size: 100%;
+}
+.selection-wrapper .drinks {
+  background-image: url(../images/drinks.jpg);
+  background-position: 30% 65%;
+  background-size: 100%;
+}
+.selection-wrapper .vendors {
+  background-image: url(../images/vendors.jpg);
+  background-position: 30% 65%;
+  background-size: 100%;
+}
+
 .price-section {
   display: flex;
   flex-direction: column;
@@ -250,6 +284,9 @@ footer {
 .menu-item {
   display: grid;
   color: var(--accent);
+}
+.menu-item-image {
+  border-radius: 14px;
 }
 .menu-item-description {
   margin-right: 0.5rem;
