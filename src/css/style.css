@@ -205,17 +205,17 @@ footer {
   filter: brightness(80%);
 }
 .selection-wrapper .cakes {
-  background-image: url(../images/cakes.jpg);
+  background-image: url(../assets/images/cakes.jpg);
   background-position: center;
   background-size: 100%;
 }
 .selection-wrapper .drinks {
-  background-image: url(../images/drinks.jpg);
+  background-image: url(../assets/images/drinks.jpg);
   background-position: 30% 65%;
   background-size: 100%;
 }
 .selection-wrapper .vendors {
-  background-image: url(../images/vendors.jpg);
+  background-image: url(../assets/images/vendors.jpg);
   background-position: 30% 65%;
   background-size: 100%;
 }
@@ -296,6 +296,34 @@ footer {
 }
 .menu-item-description {
   margin-right: 0.5rem;
+}
+
+.pick-cake-container {
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+}
+.pick-cake-container h2 {
+  text-align: center;
+}
+
+.order-item-container {
+  display: grid;
+  grid-template-columns: auto 1fr;
+  gap: 1rem;
+}
+.order-item-container h3 {
+  text-align: center;
+}
+.order-item-image {
+  width: 100px;
+  border-radius: 50%;
+}
+.order-item-amount {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 0.5rem;
 }
 
 form input, form textarea {
