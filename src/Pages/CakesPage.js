@@ -1,8 +1,29 @@
 import Menuitem from "../Components/Menuitem";
 import Priceitem from "../Components/Priceitem";
 import Banner from "../Components/Banner";
+import { useEffect, useState } from "react";
 
 export default function MenuPage() {
+
+    const [items, setItems] = useState([]);
+    const [seasonalItem, setSeasonalItem] = useState([])
+
+    useEffect(() =>{
+        async function getData() {
+            const url = "http://wordpress.headless-gotfred.nillermanden.dk/wp-json/wp/v2/posts?_embed&per_page=21";
+            const res = await fetch(url);
+            const data = await res.json();
+            
+            const seasonalData = data.filter(e => e.acf.seasonal_item)
+            const itemData = data.filter(e => !e.acf.seasonal_item).filter(e => !e.acf.petitemix_item).filter(e => !e.acf.petitemix)
+
+            console.log(data)
+
+            setItems(itemData)
+            setSeasonalItem(seasonalData)
+        }
+        getData()
+    }, []);
 
     return(
         <>
@@ -22,15 +43,14 @@ export default function MenuPage() {
                     <Priceitem name="Mix box 6" price="280"/>
                 </section>
                 <div className="limited-menu-container">
-                    <Menuitem name="yulekrans" desc="ginger bread, vanilje panna cotta, glögg og kirsebaer gel, chokolade chai creme"/>
+                    {seasonalItem.map((item, index) => (
+                        <Menuitem name={item.acf.name} image={item.acf.image} desc={item.acf.desc} key={index}/>
+                    ))}
                 </div>
                 <div className="menu-container">
-                    <Menuitem name="gammeldags aeblekage" image="aeblekage" desc="krydret macaroon, rødt æble kompot, creme fraiche"/>
-                    <Menuitem name="banoffee" desc="bastogne, saltet mælkesyltetøj, banan, passionsfrugt, flødeskum"/>
-                    <Menuitem name="yuzutaerte" desc="yuzu, lime, citron, birkes"/>
-                    <Menuitem name="hindbaertaerte" desc="mandel, hindbaer, hvid chokolade"/>
-                    <Menuitem name="fragilité" image="fragilite" desc="hasselnoed, kaffe, nougat"/>
-                    <Menuitem name="solbaerkage" desc="solbaer, lakrids, chokolade brownie"/>
+                    {items.map((item, index) => (
+                        <Menuitem name={item.acf.name} image={item.acf.image} desc={item.acf.desc} key={index}/>
+                    ))}
                 </div>
                 <section className="section-intro">
                     <div className="title-box">

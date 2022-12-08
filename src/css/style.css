@@ -136,6 +136,7 @@ html:focus-within {
   --oldbg: hsl(60, 17%, 91%);
   --bg: hsl(50, 37%, 97%);
   --accent: hsl(36, 58%, 34%);
+  --minwidth: 600px;
 }
 
 html {
@@ -170,26 +171,38 @@ header {
 }
 
 .primary-navigation {
-  list-style-type: none;
+  background-color: var(--bg);
+  position: absolute;
+  left: 0;
+  bottom: 0;
   display: flex;
   flex-direction: column;
   gap: 1rem;
-  position: absolute;
   width: 100%;
-  left: 0;
-  bottom: 0;
-  background-color: red;
+  padding-block: 2rem;
   translate: 0 100%;
   transition: translate 500ms ease;
-  padding-block: 2rem;
-  background-color: var(--bg);
   z-index: 888;
+}
+@media screen and (min-width: 600px) {
+  .primary-navigation {
+    translate: 0;
+    position: relative;
+    flex-direction: row;
+    padding-block: 0;
+  }
 }
 .primary-navigation[data-visible=false] {
   translate: 100% 100%;
 }
+@media screen and (min-width: 600px) {
+  .primary-navigation[data-visible=false] {
+    translate: 0;
+  }
+}
 .primary-navigation li {
   text-align: center;
+  list-style-type: none;
 }
 .primary-navigation a {
   color: black;
@@ -241,15 +254,21 @@ footer {
 }
 
 .price-section {
-  display: flex;
-  flex-direction: column;
+  display: grid;
+  grid-template-columns: 1fr;
   gap: 1rem;
   margin-block: 1rem;
+}
+@media screen and (min-width: 600px) {
+  .price-section {
+    grid-template-columns: repeat(2, 1fr);
+  }
 }
 .price-section h3 {
   font-size: 1.6rem;
   text-align: center;
   color: var(--accent);
+  grid-column: 1/-1;
 }
 
 .price-container {
@@ -297,6 +316,12 @@ footer {
   display: grid;
   grid-template-columns: repeat(2, 1fr);
   gap: 1.2rem;
+}
+@media screen and (min-width: 600px) {
+  .menu-container {
+    grid-template-columns: repeat(3, 1fr);
+    gap: 3rem;
+  }
 }
 
 .limited-menu-container .menu-item-image {
@@ -455,6 +480,11 @@ form h2 {
 .newburger {
   background-color: transparent;
   border: none;
+}
+@media screen and (min-width: 600px) {
+  .newburger {
+    display: none;
+  }
 }
 .newburger svg {
   transition: 500ms ease;

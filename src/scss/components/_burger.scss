@@ -68,6 +68,10 @@ $whitespace: 7px;
     background-color: transparent;
     border: none;
 
+    @media screen and (min-width: 600px) {
+        display: none;
+    }
+
     svg{
         transition: 500ms ease;
     }
