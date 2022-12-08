@@ -63,6 +63,12 @@ $whitespace: 7px;
 
 /*new burger*/
 
-.newburger svg{
-    transition: 500ms ease;
+.newburger{
+
+    background-color: transparent;
+    border: none;
+
+    svg{
+        transition: 500ms ease;
+    }
 }
