@@ -10,14 +10,12 @@ export default function MenuPage() {
 
     useEffect(() =>{
         async function getData() {
-            const url = "http://wordpress.headless-gotfred.nillermanden.dk/wp-json/wp/v2/posts?_embed&per_page=21";
+            const url = "http://wordpress.headless-gotfred.nillermanden.dk/wp-json/wp/v2/posts?_embed&per_page=20";
             const res = await fetch(url);
             const data = await res.json();
             
             const seasonalData = data.filter(e => e.acf.seasonal_item)
             const itemData = data.filter(e => !e.acf.seasonal_item).filter(e => !e.acf.petitemix_item).filter(e => !e.acf.petitemix)
-
-            console.log(data)
 
             setItems(itemData)
             setSeasonalItem(seasonalData)
@@ -37,10 +35,12 @@ export default function MenuPage() {
                 </section>
                 <section className="price-section">
                     <h3>Priser</h3>
-                    <Priceitem name="Én kage" price="48"/>
-                    <Priceitem name="Kaffe & kage" price="83"/>
-                    <Priceitem name="Mix box 4" price="188"/>
-                    <Priceitem name="Mix box 6" price="280"/>
+                    <div className="price-container">
+                        <Priceitem name="Én kage" price="48"/>
+                        <Priceitem name="Kaffe & kage" price="83"/>
+                        <Priceitem name="Mix box 4" price="188"/>
+                        <Priceitem name="Mix box 6" price="280"/>
+                    </div>
                 </section>
                 <div className="limited-menu-container">
                     {seasonalItem.map((item, index) => (

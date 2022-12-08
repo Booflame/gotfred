@@ -13,7 +13,7 @@ header{
     gap: 1rem;
     width: 100%;
     padding-block: 2rem;
-    translate: 0 100%;
+    translate: 0 99%;
     transition: translate 500ms ease;
     z-index: 888;
 
@@ -25,7 +25,7 @@ header{
     }
 
     &[data-visible="false"]{
-        translate: 100% 100%;
+        translate: 100% 99%;
         
         @media screen and (min-width: 600px) {
             translate: 0;

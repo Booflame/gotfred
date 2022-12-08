@@ -20,7 +20,24 @@ export default function OrderPage() {
     return(
         <>
             <div className="wrapper">
-                <h1>Bestilling</h1>
+                <section className="section-intro">
+                    <div className="title-box">
+                        <h2 className="heading-title">Bestilling</h2>
+                    </div>
+                    <p>Hos Gotfred Aarhus kan du bestille og afhente vores lækre portionskager samt forudbestille vores Petite Mix.</p>
+                    <p>Læs hvordan herunder og bestil dine kager hurtigt og nemt.</p>
+                    <ul>
+                        <li>Bestilling skal ske senest dagen før.</li>
+                        <li>Bestil mindst to kager - maks 30.</li>
+                        <li>Afhentning af kagerne kan ske inden for caféens åbningstid.</li>
+                    </ul>
+                    <h3>Større bestillinger & Petite Mix</h3>
+                    <p>Petite Mix bestilles I omgange af 10 styk og senest to dage før. Vi anbefaler 2-3 styk pr. person.</p>
+                    <p>
+                        Ved bestilling over 30 styk eller ved bestilling til større arrangementer, kontakt os venligt per mail på<a href="mailto:gotfred.aarhus@outlook.dk">gotfred.aarhus@outlook.dk</a>
+                    </p>
+
+                </section>
                 <form className="pick-cake-container">
                     <h2>1. Vælg dine kager</h2>
                     {posts.map((post, index) => (

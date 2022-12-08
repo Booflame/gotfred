@@ -37,14 +37,7 @@
 }
 
 .price-section{
-    display: grid;
-    grid-template-columns: 1fr;
-    gap: 1rem;
-    margin-block: 1rem;
-
-    @media screen and (min-width: 600px) {
-        grid-template-columns: repeat(2, 1fr);
-    }
+    margin-block-end: 2rem;
 
     h3{
         font-size: 1.6rem;
@@ -53,8 +46,18 @@
         grid-column: 1/-1;
     }
 }
-
 .price-container{
+    display: grid;
+    grid-template-columns: 1fr;
+    gap: 1rem;
+
+    @media screen and (min-width: 600px) {
+        grid-template-columns: repeat(auto-fit, minmax(30rem, 1fr));
+        gap: 1.4rem;
+    }
+}
+
+.price-box{
     display: flex;
     justify-content: space-between;
     outline: 1px solid var(--accent);
@@ -68,35 +71,6 @@
             content: "kr.";
             margin-inline-start: 0.1em;
         }
-    }
-}
-
-.section-intro{
-
-    color: var(--accent);
-}
-
-.title-box{
-    display: flex;
-    justify-content: center;
-
-    h2{
-        position: relative;
-        display: inline-block;
-        margin-bottom: 1.2rem;
-        font-size: 1.8rem;
-        line-height: 1.3;
-
-        &::after{
-            content: "";
-            width: 120%;
-            height: 2px;
-            background-color: var(--accent);
-            position: absolute;
-            top: 110%;
-            left: 50%;
-            transform: translate(-50%, 0);
-        } 
     }
 }
 
