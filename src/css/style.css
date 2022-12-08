@@ -133,8 +133,8 @@ html:focus-within {
 }
 
 :root {
-  --bg: hsl(60, 17%, 91%);
-  --newbg: hsl(50, 37%, 97%);
+  --oldbg: hsl(60, 17%, 91%);
+  --bg: hsl(50, 37%, 97%);
   --accent: hsl(36, 58%, 34%);
 }
 
