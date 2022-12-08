@@ -37,6 +37,7 @@ body {
   min-height: 100vh;
   text-rendering: geometricPrecision;
   line-height: 1.5;
+  overflow-x: hidden;
 }
 
 /* Make images easier to work with */
@@ -182,6 +183,7 @@ header {
   transition: translate 500ms ease;
   padding-block: 2rem;
   background-color: var(--bg);
+  z-index: 888;
 }
 .primary-navigation[data-visible=false] {
   translate: 100% 100%;
