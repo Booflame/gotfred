@@ -28,9 +28,9 @@ export default function Orderitem (props){
                 <div className="order-item-content">
                     <h3>{props.name}</h3>
                     <div className="order-item-amount">
-                        <button type="button" onClick={() => adjustCount(-1)}>-</button>
+                        <button type="button" onClick={() => {adjustCount(-1); props.clickEvent()}}>-</button>
                         <span>{count}</span>
-                        <button type="button" onClick={() => adjustCount(+1)}>+</button>
+                        <button type="button" onClick={() => {adjustCount(+1); props.clickEvent()}}>+</button>
                     </div>
                 </div>
             </div>
