@@ -14,8 +14,8 @@ export default function MenuPage() {
             const res = await fetch(url);
             const data = await res.json();
             
-            const seasonalData = data.filter(e => e.acf.seasonal_item)
-            const itemData = data.filter(e => !e.acf.seasonal_item).filter(e => !e.acf.petitemix_item).filter(e => !e.acf.petitemix)
+            const seasonalData = data.filter(e => e.acf.cake_type.includes("seasonal-cake"))
+            const itemData = data.filter(e => e.acf.cake_type.includes("portions-cake"))
 
             setItems(itemData)
             setSeasonalItem(seasonalData)

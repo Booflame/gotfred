@@ -1,14 +1,16 @@
 import { NavLink } from "react-router-dom";
 import Navigation from "./Navigation";
-import Logo from "../assets/images/logo.jpg";
+import Logo from "../assets/images/Gotfred_logo.svg";
 
 
 export default function Header (){
     return(
         <header>
-            <div className="wrapper flex flex-jc-sb flex-ai-fe">
+            <div className="wrapper">
                 <div>
-                    <NavLink to="/"><img src={Logo} alt="logo"/></NavLink>
+                    <NavLink to="/">
+                        <img src={Logo} alt="logo" width="120"/>
+                    </NavLink>
                 </div>
                 <Navigation />
             </div>
