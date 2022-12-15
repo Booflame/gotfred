@@ -8,6 +8,7 @@ import CakesPage from "./Pages/CakesPage";
 import DrinksPage from "./Pages/DrinksPage";
 import VendorsPage from "./Pages/VendorsPage";
 import OrderPage from "./Pages/OrderPage";
+import ConfirmPage from "./Pages/ConfirmPage";
 import CheckoutPage from "./Pages/CheckoutPage";
 
 export default function App() {
@@ -22,6 +23,7 @@ export default function App() {
                     <Route path="/Drinks" element={<DrinksPage />} />
                     <Route path="/Vendors" element={<VendorsPage />} />
                     <Route path="/Order" element={<OrderPage />} />
+                    <Route path="/Confirm" element={<ConfirmPage />} />
                     <Route path="/Checkout" element={<CheckoutPage />} />
                     <Route path="*" element={<Navigate to="/" />} />
                 </Routes>

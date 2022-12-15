@@ -395,8 +395,8 @@ footer {
   -webkit-margin-after: 0.5rem;
           margin-block-end: 0.5rem;
 }
-.menu-item .menu-item-description {
-  margin-right: 0.5rem;
+.menu-item .menu-item-desc {
+  margin-inline: 0;
 }
 
 .order-list {
@@ -412,6 +412,8 @@ footer {
   display: flex;
   flex-direction: column;
   gap: 2rem;
+  -webkit-margin-after: 2rem;
+          margin-block-end: 2rem;
 }
 .pick-cake-container h2 {
   text-align: center;
@@ -424,6 +426,8 @@ footer {
 }
 .order-item-container h3 {
   text-align: center;
+  -webkit-margin-after: 0.4rem;
+          margin-block-end: 0.4rem;
 }
 .order-item-image {
   width: 120px;
@@ -439,6 +443,61 @@ footer {
   justify-content: center;
   align-items: center;
   gap: 0.5rem;
+}
+
+.order-overview-section {
+  color: var(--accent);
+}
+.order-overview-section h2 {
+  -webkit-margin-after: 0.4rem;
+          margin-block-end: 0.4rem;
+  line-height: 1.2;
+}
+.order-overview-section hr {
+  border-top: 2px solid var(--accent);
+}
+.order-overview-container {
+  display: flex;
+  justify-content: space-between;
+}
+.order-overview-container > * {
+  font-style: italic;
+}
+.order-overview-container p {
+  -webkit-padding-start: 0.6em;
+          padding-inline-start: 0.6em;
+}
+.order-overview-total {
+  display: flex;
+  justify-content: space-between;
+}
+.order-overview-total h3 {
+  font-size: 1.4rem;
+  font-weight: bold;
+  -webkit-padding-start: 0.6rem;
+          padding-inline-start: 0.6rem;
+}
+.order-overview-total p {
+  font-style: italic;
+  -webkit-text-decoration: underline double;
+          text-decoration: underline double;
+}
+
+.order-button {
+  font-size: 2.5rem;
+  font-weight: bolder;
+  border-radius: 3rem;
+  border: 2px solid var(--accent);
+  background-color: transparent;
+  color: var(--accent);
+  padding: 0.2rem 2.2rem;
+}
+.order-button-container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  -webkit-margin-before: 1.4rem;
+          margin-block-start: 1.4rem;
 }
 
 form input, form textarea {

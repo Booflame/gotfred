@@ -12,6 +12,7 @@
     display: flex;
     flex-direction: column;
     gap: 2rem;
+    margin-block-end: 2rem;
 
     h2{
         text-align: center;
@@ -27,6 +28,7 @@
 
         h3{
             text-align: center;
+            margin-block-end: 0.4rem;
         }
     }
 
@@ -46,5 +48,65 @@
         justify-content: center;
         align-items: center;
         gap: 0.5rem;
+    }
+}
+
+.order-overview{
+    
+    &-section{
+        color: var(--accent);
+
+        h2{
+            margin-block-end: .4rem;
+            line-height: 1.2;
+        }
+
+        hr{
+            border-top: 2px solid var(--accent);
+        }
+    }
+
+    &-container{
+        display: flex;
+        justify-content: space-between;
+
+        >*{
+            font-style: italic;
+        }
+        p{
+            padding-inline-start: .6em;
+        }
+    }
+
+    &-total{
+        display: flex;
+        justify-content: space-between;
+
+        h3{
+            font-size: 1.4rem;
+            font-weight: bold;
+            padding-inline-start: .6rem;
+        }
+
+        p{
+            font-style: italic;
+            text-decoration: underline double;
+        }
+    }
+}
+.order-button{
+    font-size: 2.5rem;
+    font-weight: bolder;
+    border-radius: 3rem;
+    border: 2px solid var(--accent);
+    background-color: transparent;
+    color: var(--accent);
+    padding: .2rem 2.2rem;
+
+    &-container{
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        margin-block-start: 1.4rem;
     }
 }
