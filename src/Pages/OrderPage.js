@@ -8,7 +8,7 @@ export default function OrderPage() {
     const maxAmount = 10;
     const [items, setItems] = useState([]);
     const [petiteItems, setPetiteItems] = useState([]);
-    const [amount, setAmount] = useState([]);
+    const [itemAmount, setItemAmount] = useState([]);
 
     useEffect(() =>{
         async function getData() {
@@ -24,15 +24,15 @@ export default function OrderPage() {
         }
         getData();
 
-        console.log(amount)
-    }, [amount]);
+        console.log(itemAmount)
+    }, [itemAmount]);
 
     function handleclick(e) {
 
         const quantity = e.target.parentElement.children[1].textContent;
         const item = e.target.parentElement.parentElement.children[0].textContent;
 
-        setAmount(
+        setItemAmount(
             {
                 name: item,
                 amount: quantity
@@ -44,7 +44,7 @@ export default function OrderPage() {
         console.log("submit")
         navigate("/Confirm", {
             state: {
-                amount: 2
+                amount: itemAmount
             }
         })
     }

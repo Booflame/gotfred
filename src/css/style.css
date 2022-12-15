@@ -218,11 +218,16 @@ header .wrapper {
     align-items: baseline;
   }
 }
-header .wrapper > :first-child {
+@media screen and (min-width: 600px) {
+  header .wrapper > :first-child {
+    display: none;
+  }
+}
+header .wrapper > :nth-child(2) {
   grid-column: 2/3;
 }
 @media screen and (min-width: 600px) {
-  header .wrapper > :first-child {
+  header .wrapper > :nth-child(2) {
     grid-column: 1/2;
     justify-self: start;
   }
@@ -279,6 +284,14 @@ header .wrapper > :last-child {
 }
 .primary-navigation a:hover {
   text-decoration: underline;
+}
+
+.back-btn {
+  border: none;
+  background: transparent;
+}
+.back-btn img {
+  rotate: 180deg;
 }
 
 footer {
@@ -484,6 +497,7 @@ footer {
 }
 
 .order-button {
+  cursor: pointer;
   font-size: 2.5rem;
   font-weight: bolder;
   border-radius: 3rem;
