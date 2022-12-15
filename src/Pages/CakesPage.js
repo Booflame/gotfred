@@ -5,7 +5,8 @@ import { useEffect, useState } from "react";
 
 export default function MenuPage() {
 
-    const [items, setItems] = useState([]);
+    const [items, setItems] = useState([])
+    const [petiteItems, setPetiteItems] = useState([])
     const [seasonalItem, setSeasonalItem] = useState([])
 
     useEffect(() =>{
@@ -16,8 +17,10 @@ export default function MenuPage() {
             
             const seasonalData = data.filter(e => e.acf.cake_type.includes("seasonal-cake"))
             const itemData = data.filter(e => e.acf.cake_type.includes("portions-cake"))
+            const PetiteItemData = data.filter(e => e.acf.cake_type.includes("petitemix-cake"))
 
             setItems(itemData)
+            setPetiteItems(PetiteItemData)
             setSeasonalItem(seasonalData)
         }
         getData()
@@ -58,6 +61,12 @@ export default function MenuPage() {
                     </div>
                     <p>Vores petite mix gælder kun forudbestilling og består af fire mindre, men lige så lækre mundfulde. </p>
                     <p>Bestil dem i en pakke af mindst 10 og glæd dine gæster, kolleger eller familie med lidt til den søde tand.</p>
+
+                    <div className="menu-container">
+                    {petiteItems.map((item, index) => (
+                        <Menuitem name={item.acf.name} image={item.acf.image} desc={item.acf.desc} key={index}/>
+                    ))}
+                </div>
                 </section>
             </div>
         </>

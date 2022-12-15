@@ -36,6 +36,11 @@ h1,h2,h3{
     color: var(--accent);
     margin-block-end: 2rem;
 
+    h3{
+        text-align: center;
+        margin-block-end: .8rem;
+    }
+
     p{
         max-width: 72ch;
         margin-inline: auto;

@@ -4,7 +4,8 @@ import Orderitem from "../Components/OrderItem";
 export default function OrderPage() {
 
     const maxAmount = 10;
-    const [posts, setPosts] = useState([]);
+    const [items, setItems] = useState([]);
+    const [petiteItems, setPetiteItems] = useState([]);
     const [amount, setAmount] = useState([]);
 
     useEffect(() =>{
@@ -12,11 +13,17 @@ export default function OrderPage() {
             const url = "http://wordpress.headless-gotfred.nillermanden.dk/wp-json/wp/v2/posts?_embed&per_page=20";
             const res = await fetch(url);
             const data = await res.json();
-            setPosts(data)
+
+            // console.log(data)
+            const itemData = data.filter(e => !e.acf.cake_type.includes("petite"))
+            const petiteItemData = data.filter(e => e.acf.cake_type.includes("petitemix-group"))
+
+            setItems(itemData)
+            setPetiteItems(petiteItemData)
         }
         getData();
 
-        console.log(amount)
+        // console.log(amount)
     }, [amount]);
 
     function handleclick() {
@@ -51,8 +58,11 @@ export default function OrderPage() {
                 </section>
                 <form className="pick-cake-container">
                     <h2>1. Vælg dine kager</h2>
-                    {posts.map((post, index) => (
-                        <Orderitem name={post.acf.name} image={post.acf.image} max={maxAmount} key={index} clickEvent={(e) => handleclick(e)}/>
+                    {items.map((item, index) => (
+                        <Orderitem name={item.acf.name} image={item.acf.image} max={maxAmount} key={index} clickEvent={(e) => handleclick(e)}/>
+                    ))}
+                    {petiteItems.map((item, index) => (
+                        <Orderitem name={item.acf.name} image={item.acf.image} max={maxAmount} key={index} clickEvent={(e) => handleclick(e)}/>
                     ))}
                 </form>
                 <section>
@@ -65,7 +75,7 @@ export default function OrderPage() {
                     <h2>Orderoverblik:</h2>
                     <div>
                         <p>Hindbaer taerte</p>
-                        <span>x2</span>
+                        <span>x3</span>
                     </div>
                     <div>
                         <p>Yuzu taerte</p>

@@ -1,5 +1,11 @@
 .order-list{
     padding-left: 1.1rem;
+    margin-inline: auto;
+
+    li::marker{
+        font-size: 1.5em;
+        line-height: 1;
+    }
 }
 
 .pick-cake-container{
