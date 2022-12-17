@@ -148,7 +148,9 @@ html {
   background-color: var(--bg);
 }
 
-h1, h2, h3 {
+h1,
+h2,
+h3 {
   font-weight: 500;
 }
 
@@ -200,6 +202,47 @@ h1, h2, h3 {
   top: 110%;
   left: 50%;
   transform: translate(-50%, 0);
+}
+
+.title-box-home {
+  display: flex;
+  justify-content: center;
+}
+.title-box-home > * {
+  position: relative;
+  display: inline-block;
+  margin-bottom: 1.2rem;
+  font-size: 1.5rem;
+  line-height: 1.3;
+}
+.title-box-home > *::after {
+  content: "";
+  width: 100%;
+  height: 2px;
+  background-color: var(--accent);
+  position: absolute;
+  top: 110%;
+  left: 50%;
+  transform: translate(-50%, 0);
+}
+
+.section-intro-home {
+  color: var(--accent);
+  -webkit-margin-after: 2rem;
+          margin-block-end: 2rem;
+}
+.section-intro-home h3 {
+  text-align: center;
+  -webkit-margin-after: 0.8rem;
+          margin-block-end: 0.8rem;
+}
+.section-intro-home p {
+  text-align: center;
+  max-width: 72ch;
+  margin-inline: auto;
+}
+.section-intro-home #texthome1 {
+  margin-top: 10px;
 }
 
 header {
@@ -309,7 +352,7 @@ footer {
 }
 
 #instagram-icon {
-  width: 50%;
+  width: 40%;
 }
 
 #kontrol-icon {
@@ -323,6 +366,71 @@ footer a {
 
 footer a:visited {
   color: var(--accent);
+}
+
+.season {
+  position: relative;
+}
+
+.imagebottom {
+  position: relative;
+}
+
+.imagetop {
+  position: absolute;
+  top: 100px;
+}
+
+.seasontitle {
+  font-weight: 500;
+  color: #452333;
+  font-size: 40px;
+  position: absolute;
+  top: 45px;
+  left: 130px;
+  z-index: 2;
+}
+
+.seasoncake {
+  font-weight: 300;
+  color: #452333;
+  font-size: 40px;
+  text-align: center;
+  z-index: 2;
+  position: absolute;
+  top: 360px;
+  left: 110px;
+}
+
+.seasontext {
+  color: #452333;
+  position: absolute;
+  top: 410px;
+  left: 50px;
+}
+
+.btn-sortiment {
+  background-color: white;
+  color: #452333;
+  font-size: 15px;
+  font-weight: 500;
+  padding: 5px 20px;
+  border-radius: 50px;
+  border: solid 3px #452333;
+  margin: 10px 0px;
+  cursor: pointer;
+}
+
+.btn-bestil {
+  background-color: white;
+  color: #452333;
+  font-size: 15px;
+  font-weight: 500;
+  padding: 5px 20px;
+  border-radius: 50px;
+  border: solid 3px #452333;
+  margin: 10px 0px;
+  cursor: pointer;
 }
 
 .selection-wrapper {
