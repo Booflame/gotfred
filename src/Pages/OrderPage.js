@@ -8,19 +8,7 @@ export default function OrderPage() {
     const maxAmount = 10;
     const [items, setItems] = useState([]);
     const [petiteItems, setPetiteItems] = useState([]);
-    const [itemAmount, setItemAmount] = useState([]);
-
-    const listOfObjects = [
-        {
-        name: "hindbaer taerte",
-        amount: "3"},
-        {
-        name: "yuzu taerte",
-        amount: "3"},
-        {
-        name: "gammeldags aeblekage",
-        amount: "4"}
-    ]
+    const [listOfItems, setListOfItems] = useState([]);
 
     useEffect(() =>{
         async function getData() {
@@ -36,31 +24,26 @@ export default function OrderPage() {
         }
         getData();
 
-    }, []);
+        console.log(listOfItems)
+    }, [listOfItems]);
 
-    function handleclick(e) {
-
+    async function handleclick(e) {
         const quantity = e.target.parentElement.children[1].textContent;
         const itemName = e.target.parentElement.parentElement.children[0].textContent;
-        const listItem = listOfObjects.find(o => o.name === itemName)
+        let updatedList = [...listOfItems];
+        const index = updatedList.findIndex(o => o.name === itemName)
 
-        if (listItem){
-            listItem.amount = quantity;
-            console.log(listOfObjects)
+        if(index === -1){
+            setListOfItems(updatedList = [...listOfItems, {name: itemName, amount: quantity}])
         } else{
-            let newItem = {name: itemName, amount: quantity};
+            updatedList[index].amount = quantity
+            setListOfItems(updatedList)
         }
-
-        // let itemList = {name: itemName, amount: quantity}
-        // let newList = [...itemAmount, itemList]
-
-        setItemAmount()
     }
     function handleSubmit(e) {
         e.preventDefault();
-        console.log("submit")
         navigate("/Confirm", {
-            state: listOfObjects
+            state: listOfItems
         })
     }
 
@@ -102,21 +85,12 @@ export default function OrderPage() {
                     </section>
                     <section className="order-overview-section">
                         <h2>Orderoverblik:</h2>
-                        {listOfObjects.map((item, index) => (
+                        {listOfItems.map((item, index) => (
                             <div className="order-overview-container" key={index}>
                                 <p>{item.name}</p>
                                 <span>x{item.amount}</span>
                             </div>
                         ))}
-                        <hr />
-                        <div className="order-overview-total">
-                            <h3>Total:</h3>
-                            <p>466 kr.</p>
-                        </div>
-                    </section>
-                    <section className="order-overview-section">
-                        <h2>Orderoverblik:</h2>
-                        
                         <hr />
                         <div className="order-overview-total">
                             <h3>Total:</h3>
