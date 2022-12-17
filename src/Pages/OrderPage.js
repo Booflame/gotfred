@@ -10,6 +10,18 @@ export default function OrderPage() {
     const [petiteItems, setPetiteItems] = useState([]);
     const [itemAmount, setItemAmount] = useState([]);
 
+    const listOfObjects = [
+        {
+        name: "hindbaer taerte",
+        amount: "3"},
+        {
+        name: "yuzu taerte",
+        amount: "3"},
+        {
+        name: "gammeldags aeblekage",
+        amount: "4"}
+    ]
+
     useEffect(() =>{
         async function getData() {
             const url = "http://wordpress.headless-gotfred.nillermanden.dk/wp-json/wp/v2/posts?_embed&per_page=20";
@@ -24,28 +36,31 @@ export default function OrderPage() {
         }
         getData();
 
-        console.log(itemAmount)
-    }, [itemAmount]);
+    }, []);
 
     function handleclick(e) {
 
         const quantity = e.target.parentElement.children[1].textContent;
-        const item = e.target.parentElement.parentElement.children[0].textContent;
+        const itemName = e.target.parentElement.parentElement.children[0].textContent;
+        const listItem = listOfObjects.find(o => o.name === itemName)
 
-        setItemAmount(
-            {
-                name: item,
-                amount: quantity
-            }
-        )
+        if (listItem){
+            listItem.amount = quantity;
+            console.log(listOfObjects)
+        } else{
+            let newItem = {name: itemName, amount: quantity};
+        }
+
+        // let itemList = {name: itemName, amount: quantity}
+        // let newList = [...itemAmount, itemList]
+
+        setItemAmount()
     }
     function handleSubmit(e) {
         e.preventDefault();
         console.log("submit")
         navigate("/Confirm", {
-            state: {
-                amount: itemAmount
-            }
+            state: listOfObjects
         })
     }
 
@@ -87,18 +102,21 @@ export default function OrderPage() {
                     </section>
                     <section className="order-overview-section">
                         <h2>Orderoverblik:</h2>
-                        <div className="order-overview-container">
-                            <p>Hindbaer taerte</p>
-                            <span>x3</span>
+                        {listOfObjects.map((item, index) => (
+                            <div className="order-overview-container" key={index}>
+                                <p>{item.name}</p>
+                                <span>x{item.amount}</span>
+                            </div>
+                        ))}
+                        <hr />
+                        <div className="order-overview-total">
+                            <h3>Total:</h3>
+                            <p>466 kr.</p>
                         </div>
-                        <div className="order-overview-container">
-                            <p>Yuzu taerte</p>
-                            <span>x3</span>
-                        </div>
-                        <div className="order-overview-container">
-                            <p>Gammeldags aeblekage</p>
-                            <span>x4</span>
-                        </div>
+                    </section>
+                    <section className="order-overview-section">
+                        <h2>Orderoverblik:</h2>
+                        
                         <hr />
                         <div className="order-overview-total">
                             <h3>Total:</h3>
