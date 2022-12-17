@@ -42,6 +42,9 @@ export default function HomePage() {
                             <p className="opentxt">Weekend: 11:30-17:30</p>
                         </div>
                     </div>
+                    <div className="title-box-home">
+                        <h2>Besøg vores Instagram</h2>
+                    </div>
                 </div>
             </section>
         </>
