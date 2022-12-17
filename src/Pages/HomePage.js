@@ -1,6 +1,8 @@
 import Banner_Home from "../Components/Banner_Home.js";
 import texturehomeyule from "../assets/images/texturehomeyule.png";
 import yulekrans1 from "../assets/images/yulekrans1.png";
+import julestemning from "../assets/images/julestemning.jpg";
+import { NavLink } from "react-router-dom";
 
 
 export default function HomePage() {
@@ -24,10 +26,23 @@ export default function HomePage() {
                     <img className="imagetop" src={yulekrans1} alt="yulekrans"></img>
                     <h2 className="seasoncake">Yulekrans</h2>
                     <p className="seasontext">Gingerbread, vanilje pannacotta, glögg, kirsebaergel & chokolade chai creme.</p>
+                    <NavLink to="/Selection">
+                        <button type="button" className="btn-sortiment">Se hele vores sortiment</button>
+                    </NavLink>
+                    <p className="ellertxt">eller</p>
+                    <NavLink to="/Order">
+                        <button type="button" className="btn-bestil">Bestil vores kager nu</button>
+                    </NavLink>
+                    <div className="phantom">
+                        <img className="stemning" src={julestemning} alt="julekagestemning"></img>
+                        <div className="openinghours">
+                            <p className="opentxt">Besøg vores café i Havnegade 4 i Aarhus</p>
+                            <p className="opentitle">Åbningstider</p>
+                            <p className="opentxt">Tirsdag-Fredag: 12:30 - 17:30</p>
+                            <p className="opentxt">Weekend: 11:30-17:30</p>
+                        </div>
+                    </div>
                 </div>
-                <button className="btn-sortiment">Se hele vores sortiment</button>
-                <p>eller</p>
-                <button className="btn-bestil">Bestil vores kager nu</button>
             </section>
         </>
     )
