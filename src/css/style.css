@@ -296,8 +296,33 @@ header .wrapper > :last-child {
 
 footer {
   min-height: 100px;
+  background-image: url(../assets/images/footerbg.png);
   background-color: transparent;
   padding-block: 2rem;
+  color: var(--accent);
+  text-decoration: none;
+  margin-top: 10px;
+}
+
+.icons {
+  display: flex;
+}
+
+#instagram-icon {
+  width: 50%;
+}
+
+#kontrol-icon {
+  width: 40%;
+}
+
+footer a {
+  color: var(--accent);
+  margin: 0;
+}
+
+footer a:visited {
+  color: var(--accent);
 }
 
 .selection-wrapper {

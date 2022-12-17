@@ -1,5 +1,8 @@
-export default function Footer (){
-    return(
+import kontrolrapport from "../assets/images/kontrol_rapport_green.webp";
+import instagramicon from "../assets/images/instagramicon.png";
+
+export default function Footer() {
+    return (
         <footer>
             <div className="wrapper">
                 <div>
@@ -16,9 +19,10 @@ export default function Footer (){
                     <h3>Mail</h3>
                     <p><a href="mailto:gotfred.aarhus@outlook.dk">gotfred.aarhus@outlook.dk</a></p>
                 </div>
-                <div>
-                    <a href="https://www.instagram.com/gotfred.aarhus/">instagram</a>
-                    <a href="https://www.findsmiley.dk/1221267">smiley</a>
+                <h3>Instagram & Kontrolrapport</h3>
+                <div className="icons">
+                    <a href="https://www.instagram.com/gotfred.aarhus/"><img id="instagram-icon" src={instagramicon} alt="instagram" /></a>
+                    <a href="https://www.findsmiley.dk/1221267"><img id="kontrol-icon" src={kontrolrapport} alt="kontrol rapport" /></a>
                 </div>
             </div>
         </footer>
