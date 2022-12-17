@@ -1,11 +1,11 @@
 export default function ConfirmPage() {
 
-    return(
+    return (
         <>
             <div className="wrapper">
                 <h1>Bestilling</h1>
                 <section className="order-overview-section">
-                    <h2>Orderoverblik:</h2>
+                    <h2>Ordreoverblik:</h2>
                     <div className="order-overview-container">
                         <p>Hindbaer taerte</p>
                         <span>x3</span>
