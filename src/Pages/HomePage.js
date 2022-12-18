@@ -21,7 +21,7 @@ export default function HomePage() {
             <section className="season-section">
                 <div className="season-bg">
                     <h2>Season</h2>
-                    <img className="imagetop" src={yulekrans1} alt="yulekrans" />
+                    <img className="season-image" src={yulekrans1} alt="yulekrans" />
                     <h2>Yulekrans</h2>
                     <p className="season-desc">Gingerbread, vanilje pannacotta, glögg, kirsebaergel & chokolade chai creme.</p>
                     <div className="season-container">

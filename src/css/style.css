@@ -358,6 +358,10 @@ footer a:visited {
   color: var(--alt-text);
 }
 
+.season-image {
+  margin-inline: auto;
+}
+
 .season-desc {
   width: 30ch;
   margin-inline: auto;
