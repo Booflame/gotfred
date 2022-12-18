@@ -9,6 +9,7 @@ export default function OrderPage() {
     const [items, setItems] = useState([]);
     const [petiteItems, setPetiteItems] = useState([]);
     const [listOfItems, setListOfItems] = useState([]);
+    const [price, setPrice] = useState(null)
 
     useEffect(() =>{
         async function getData() {
@@ -23,9 +24,7 @@ export default function OrderPage() {
             setPetiteItems(petiteItemData)
         }
         getData();
-
-        console.log(listOfItems)
-    }, [listOfItems]);
+    }, []);
 
     async function handleclick(e) {
         const quantity = e.target.parentElement.children[1].textContent;
@@ -39,12 +38,19 @@ export default function OrderPage() {
             updatedList[index].amount = quantity
             setListOfItems(updatedList)
         }
+
+        const newPrice = listOfItems.reduce((acc, num) => {
+            const key = parseInt(num.amount)
+            return acc += key
+        }, 0)
+
+        setPrice(newPrice * 48);
     }
     
     function handleSubmit(e) {
         e.preventDefault();
         navigate("/Confirm", {
-            state: listOfItems
+            state: [listOfItems, price]
         })
     }
 
@@ -95,7 +101,7 @@ export default function OrderPage() {
                         <hr />
                         <div className="order-overview-total">
                             <h3>Total:</h3>
-                            <p>466 kr.</p>
+                            <p>{price} kr.</p>
                         </div>
                     </section>
                     <div className="order-button-container">
