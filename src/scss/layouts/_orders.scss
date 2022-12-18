@@ -55,6 +55,7 @@
     
     &-section{
         color: var(--accent);
+        margin-block-end: 3rem;
 
         h2{
             margin-block-end: .4rem;
@@ -109,15 +110,31 @@
     }
 }
 .confirm-form{
+    color: var(--accent);
 
-    textarea{
-        resize: none;
-        border-color: var(--accent);
+    .form-desc{
+        margin-block-end: 1.2em;
+    }
+
+    label{
+        display: block;
+        font-size: 1.1rem;
+        margin-block-end: .4em;
+    }
+
+    input, textarea{
+        border: 1px solid var(--accent);
+        background-color: transparent;
         width: 100%;
-        padding: .2em .4em;
+        padding: .4em;
+        margin-block-end: 1em;
 
         &::placeholder{
             color: var(--accent);
         }
+    }
+
+    textarea{
+        resize: none;
     }
 }

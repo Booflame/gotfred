@@ -62,7 +62,7 @@ export default function MenuPage() {
                     <p>Vores petite mix gælder kun forudbestilling og består af fire mindre, men lige så lækre mundfulde. </p>
                     <p>Bestil dem i en pakke af mindst 10 og glæd dine gæster, kolleger eller familie med lidt til den søde tand.</p>
 
-                    <div className="menu-container">
+                    <div className="petite-menu-container">
                     {petiteItems.map((item, index) => (
                         <Menuitem name={item.acf.name} image={item.acf.image} desc={item.acf.desc} key={index}/>
                     ))}

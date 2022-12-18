@@ -343,7 +343,7 @@ footer {
   background-image: url(../assets/images/footerbg.png);
   padding-block: 2rem;
   color: var(--accent);
-  margin-top: 10px;
+  margin-top: 2rem;
 }
 
 .icons {
@@ -571,6 +571,19 @@ footer a:visited {
      object-position: 50% 60%;
 }
 
+.petite-menu-container {
+  padding-block: 2rem;
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 1.2rem;
+}
+@media screen and (min-width: 800px) {
+  .petite-menu-container {
+    grid-template-columns: repeat(4, 1fr);
+    gap: 2rem;
+  }
+}
+
 .menu-item {
   display: grid;
   display: flex;
@@ -640,6 +653,8 @@ footer a:visited {
 
 .order-overview-section {
   color: var(--accent);
+  -webkit-margin-after: 3rem;
+          margin-block-end: 3rem;
 }
 .order-overview-section h2 {
   -webkit-margin-after: 0.4rem;
@@ -688,20 +703,38 @@ footer a:visited {
           margin-block-start: 1.4rem;
 }
 
+.confirm-form {
+  color: var(--accent);
+}
+.confirm-form .form-desc {
+  -webkit-margin-after: 1.2em;
+          margin-block-end: 1.2em;
+}
+.confirm-form label {
+  display: block;
+  font-size: 1.1rem;
+  -webkit-margin-after: 0.4em;
+          margin-block-end: 0.4em;
+}
+.confirm-form input, .confirm-form textarea {
+  border: 1px solid var(--accent);
+  background-color: transparent;
+  width: 100%;
+  padding: 0.4em;
+  -webkit-margin-after: 1em;
+          margin-block-end: 1em;
+}
+.confirm-form input::-moz-placeholder, .confirm-form textarea::-moz-placeholder {
+  color: var(--accent);
+}
+.confirm-form input:-ms-input-placeholder, .confirm-form textarea:-ms-input-placeholder {
+  color: var(--accent);
+}
+.confirm-form input::placeholder, .confirm-form textarea::placeholder {
+  color: var(--accent);
+}
 .confirm-form textarea {
   resize: none;
-  border-color: var(--accent);
-  width: 100%;
-  padding: 0.2em 0.4em;
-}
-.confirm-form textarea::-moz-placeholder {
-  color: var(--accent);
-}
-.confirm-form textarea:-ms-input-placeholder {
-  color: var(--accent);
-}
-.confirm-form textarea::placeholder {
-  color: var(--accent);
 }
 
 .banner {

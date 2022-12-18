@@ -50,7 +50,6 @@ export default function OrderPage() {
     }
 
     function handleChange(e) {
-        
         setDate(e.target.value)
     }
     
