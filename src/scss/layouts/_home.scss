@@ -1,120 +1,71 @@
-@use '../util' as u;
-
-
-.season {
+.season-section {
     position: relative;
+    isolation: isolate;
+    overflow: hidden;
+    
+    .season-bg{
+        padding-block: 2.7rem 3.6rem;
+        background-image: url(../assets/images/texturehomeyule.png);
+    }
+
+    h2{
+        text-align: center;
+        font-size: 2.5rem;
+        color: var(--alt-text)
+    }
 }
 
-.imagebottom {
-    position: relative;
-
+.season-desc{
+    width: 30ch;
+    margin-inline: auto;
+    margin-block-end: .8rem;
 }
 
-.imagetop {
-    position: absolute;
-    top: 100px;
-}
-
-.seasontitle {
-    font-weight: 500;
-    color: #452333;
-    font-size: 40px;
-    position: absolute;
-    top: 45px;
-    left: 130px;
-    z-index: 2;
-}
-
-.seasoncake {
-    font-weight: 300;
-    color: #452333;
-    font-size: 40px;
+.season-btn{
+    cursor: pointer; 
+    display: inline-block;
     text-align: center;
-    z-index: 2;
-    position: absolute;
-    top: 360px;
-    left: 110px;
-}
-
-.seasontext {
-    color: #452333;
-    position: absolute;
-    top: 410px;
-    left: 50px
-}
-
-
-
-.btn-sortiment {
-    background-color: white;
-    color: #452333;
-    font-size: 15px;
+    background-color: #fff;
+    color: var(--alt-text);
     font-weight: 500;
-    padding: 5px 10px;
+    padding: .3rem .6rem;
     border-radius: 50px;
-    border: solid 2px #452333;
-    margin: 10px 0px;
-    cursor: pointer;
-    z-index: 2;
-    position: absolute;
-    top: 450px;
-    left: 100px;
+    border: 2px solid var(--alt-text);
+    text-decoration: none;
 }
 
-.btn-bestil {
-    background-color: white;
-    color: #452333;
-    font-size: 15px;
-    font-weight: 500;
-    padding: 5px 10px;
-    border-radius: 50px;
-    border: solid 2px #452333;
-    margin: 10px 0px;
-    cursor: pointer;
-    z-index: 2;
-    position: absolute;
-    top: 520px;
-    left: 108px;
-}
-
-.ellertxt {
-    position: absolute;
-    left: 175px;
-    top: 500px;
-    color: #452333;
+.season-container{
+    display: grid;
+    gap: .5rem;
+    justify-items: center;
+    align-items: center;
 }
 
 .stemning {
     z-index: -1;
     position: absolute;
-    top: 550px;
+    top: 580px;
 }
 
 .openinghours {
-    width: 250px;
-    height: 105px;
     background-color: var(--bg);
     border: solid 2px var(--accent);
-    margin: 0 auto;
-    margin-top: 50px;
+    margin-inline: auto;
+    margin-block: 4rem;
+    display: flex;
+    flex-direction: column;
+    gap: .3rem;
+    padding-block: .6rem;
 }
 
-.phantom {
-    height: 300px;
-}
-
-.opentxt {
-    font-size: 12px;
+.open-txt {
     font-weight: 500;
     text-align: center;
-    padding: 2px;
-    margin-top: 3px;
     color: var(--accent);
 }
 
-.opentitle {
-    font-size: 15px;
-    font-weight: 300;
+.open-title {
+    font-size: 1.2rem;
     text-align: center;
     color: var(--accent);
 }

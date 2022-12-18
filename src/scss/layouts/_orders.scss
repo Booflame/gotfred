@@ -1,6 +1,7 @@
 .order-list{
-    padding-left: 1.1rem;
+    padding-left: 1.4rem;
     margin-inline: auto;
+    margin-block-end: 1.2rem;
 
     li::marker{
         font-size: 1.5em;
@@ -16,6 +17,10 @@
 
     h2{
         text-align: center;
+
+        @media screen and (min-width: 800px) {
+            text-align: left
+        } 
     }
 }
 
@@ -111,6 +116,10 @@
 }
 .confirm-form{
     color: var(--accent);
+
+    h2{
+        margin-block-end: .8rem;
+    }
 
     .form-desc{
         margin-block-end: 1.2em;

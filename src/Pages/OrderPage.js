@@ -41,8 +41,8 @@ export default function OrderPage() {
             setListOfItems(updatedList)
         }
 
-        const newPrice = listOfItems.reduce((acc, num) => {
-            const key = parseInt(num.amount)
+        const newPrice = listOfItems.reduce((acc, obj) => {
+            const key = parseInt(obj.amount)
             return acc += key
         }, 0)
 
@@ -74,16 +74,24 @@ export default function OrderPage() {
                     </div>
                     <p>Hos Gotfred Aarhus kan du bestille og afhente vores lækre portionskager samt forudbestille vores Petite Mix.</p>
                     <p>Læs hvordan herunder og bestil dine kager hurtigt og nemt.</p>
-                    <ul className="order-list">
-                        <li>Bestilling skal ske senest dagen før.</li>
-                        <li>Bestil mindst to kager - maks 30.</li>
-                        <li>Afhentning af kagerne kan ske inden for caféens åbningstid.</li>
-                    </ul>
-                    <h3>Større bestillinger & Petite Mix</h3>
-                    <p>Petite Mix bestilles I omgange af 10 styk og senest to dage før. Vi anbefaler 2-3 styk pr. person.</p>
-                    <p>
-                        Ved bestilling over 30 styk eller ved bestilling til større arrangementer, kontakt os venligt per mail på <a href="mailto:gotfred.aarhus@outlook.dk">gotfred.aarhus@outlook.dk</a>
-                    </p>
+                    <div className="grid-d2">
+                        <div>
+                            <h3>Besttilingskrav</h3>
+                            <ul className="order-list">
+                                <li>Bestilling skal ske senest dagen før.</li>
+                                <li>Bestil mindst to kager - maks 30.</li>
+                                <li>Afhentning af kagerne kan ske inden for caféens åbningstid.</li>
+                            </ul>
+                        </div>
+                        <div>
+                            <h3>Større bestillinger & Petite Mix</h3>
+                            <p>Petite Mix bestilles I omgange af 10 styk og senest to dage før. Vi anbefaler 2-3 styk pr. person.</p>
+                            <p>
+                                Ved bestilling over 30 styk eller ved bestilling til større arrangementer, kontakt os venligt per mail på <a href="mailto:gotfred.aarhus@outlook.dk">gotfred.aarhus@outlook.dk</a>
+                            </p>
+                        </div>
+                    </div>
+                    
                 </section>
                 <form onSubmit={handleSubmit} className="">
                     <section className="pick-cake-container">

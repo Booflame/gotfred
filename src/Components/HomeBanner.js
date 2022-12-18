@@ -1,6 +1,6 @@
 import homepagebanner from "../assets/images/homepagebanner.png";
 
-export default function Banner(props) {
+export default function HomeBanner() {
 
     return (
         <>

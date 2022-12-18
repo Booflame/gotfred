@@ -136,6 +136,7 @@ html:focus-within {
   --oldbg: hsl(60, 17%, 91%);
   --bg: hsl(50, 37%, 97%);
   --accent: hsl(36, 58%, 34%);
+  --alt-text: hsl(332, 33%, 20%);
   --minwidth: 600px;
 }
 
@@ -148,9 +149,7 @@ html {
   background-color: var(--bg);
 }
 
-h1,
-h2,
-h3 {
+h1, h2, h3 {
   font-weight: 500;
 }
 
@@ -167,6 +166,17 @@ h3 {
   max-width: 80rem;
 }
 
+.grid-d2 {
+  display: grid;
+  grid-template-columns: 1fr;
+}
+@media screen and (min-width: 800px) {
+  .grid-d2 {
+    grid-template-columns: repeat(2, 1fr);
+    gap: 2rem;
+  }
+}
+
 .section-intro {
   color: var(--accent);
   -webkit-margin-after: 2rem;
@@ -180,6 +190,8 @@ h3 {
 .section-intro p {
   max-width: 72ch;
   margin-inline: auto;
+  -webkit-margin-after: 1rem;
+          margin-block-end: 1rem;
 }
 
 .title-box {
@@ -203,47 +215,11 @@ h3 {
   left: 50%;
   transform: translate(-50%, 0);
 }
-
-.title-box-home {
-  display: flex;
-  justify-content: center;
-  color: var(--accent);
-}
 .title-box-home > * {
-  position: relative;
-  display: inline-block;
-  margin-bottom: 1.2rem;
   font-size: 1.5rem;
-  line-height: 1.3;
 }
 .title-box-home > *::after {
-  content: "";
-  width: 100%;
-  height: 2px;
-  background-color: var(--accent);
-  position: absolute;
-  top: 110%;
-  left: 50%;
-  transform: translate(-50%, 0);
-}
-
-.section-intro-home {
-  color: var(--accent);
-  -webkit-margin-after: 2rem;
-          margin-block-end: 2rem;
-}
-.section-intro-home h3 {
-  text-align: center;
-  -webkit-margin-after: 0.8rem;
-          margin-block-end: 0.8rem;
-}
-.section-intro-home p {
-  text-align: center;
-  max-width: 72ch;
-  margin-inline: auto;
-}
-.section-intro-home #texthome1 {
-  margin-top: 10px;
+  width: 105%;
 }
 
 header {
@@ -367,117 +343,73 @@ footer a:visited {
   color: var(--accent);
 }
 
-.season {
+.season-section {
   position: relative;
+  isolation: isolate;
+  overflow: hidden;
 }
-
-.imagebottom {
-  position: relative;
+.season-section .season-bg {
+  padding-block: 2.7rem 3.6rem;
+  background-image: url(../assets/images/texturehomeyule.png);
 }
-
-.imagetop {
-  position: absolute;
-  top: 100px;
-}
-
-.seasontitle {
-  font-weight: 500;
-  color: #452333;
-  font-size: 40px;
-  position: absolute;
-  top: 45px;
-  left: 130px;
-  z-index: 2;
-}
-
-.seasoncake {
-  font-weight: 300;
-  color: #452333;
-  font-size: 40px;
+.season-section h2 {
   text-align: center;
-  z-index: 2;
-  position: absolute;
-  top: 360px;
-  left: 110px;
+  font-size: 2.5rem;
+  color: var(--alt-text);
 }
 
-.seasontext {
-  color: #452333;
-  position: absolute;
-  top: 410px;
-  left: 50px;
+.season-desc {
+  width: 30ch;
+  margin-inline: auto;
+  -webkit-margin-after: 0.8rem;
+          margin-block-end: 0.8rem;
 }
 
-.btn-sortiment {
-  background-color: white;
-  color: #452333;
-  font-size: 15px;
-  font-weight: 500;
-  padding: 5px 10px;
-  border-radius: 50px;
-  border: solid 2px #452333;
-  margin: 10px 0px;
+.season-btn {
   cursor: pointer;
-  z-index: 2;
-  position: absolute;
-  top: 450px;
-  left: 100px;
-}
-
-.btn-bestil {
-  background-color: white;
-  color: #452333;
-  font-size: 15px;
+  display: inline-block;
+  text-align: center;
+  background-color: #fff;
+  color: var(--alt-text);
   font-weight: 500;
-  padding: 5px 10px;
+  padding: 0.3rem 0.6rem;
   border-radius: 50px;
-  border: solid 2px #452333;
-  margin: 10px 0px;
-  cursor: pointer;
-  z-index: 2;
-  position: absolute;
-  top: 520px;
-  left: 108px;
+  border: 2px solid var(--alt-text);
+  text-decoration: none;
 }
 
-.ellertxt {
-  position: absolute;
-  left: 175px;
-  top: 500px;
-  color: #452333;
+.season-container {
+  display: grid;
+  gap: 0.5rem;
+  justify-items: center;
+  align-items: center;
 }
 
 .stemning {
   z-index: -1;
   position: absolute;
-  top: 550px;
+  top: 580px;
 }
 
 .openinghours {
-  width: 250px;
-  height: 105px;
   background-color: var(--bg);
   border: solid 2px var(--accent);
-  margin: 0 auto;
-  margin-top: 50px;
+  margin-inline: auto;
+  margin-block: 4rem;
+  display: flex;
+  flex-direction: column;
+  gap: 0.3rem;
+  padding-block: 0.6rem;
 }
 
-.phantom {
-  height: 300px;
-}
-
-.opentxt {
-  font-size: 12px;
+.open-txt {
   font-weight: 500;
   text-align: center;
-  padding: 2px;
-  margin-top: 3px;
   color: var(--accent);
 }
 
-.opentitle {
-  font-size: 15px;
-  font-weight: 300;
+.open-title {
+  font-size: 1.2rem;
   text-align: center;
   color: var(--accent);
 }
@@ -529,7 +461,7 @@ footer a:visited {
   grid-template-columns: 1fr;
   gap: 1rem;
 }
-@media screen and (min-width: 600px) {
+@media screen and (min-width: 800px) {
   .price-container {
     grid-template-columns: repeat(auto-fit, minmax(30rem, 1fr));
     gap: 1.4rem;
@@ -556,7 +488,7 @@ footer a:visited {
   grid-template-columns: repeat(2, 1fr);
   gap: 1.2rem;
 }
-@media screen and (min-width: 600px) {
+@media screen and (min-width: 800px) {
   .menu-container {
     grid-template-columns: repeat(3, 1fr);
     gap: 3rem;
@@ -606,8 +538,10 @@ footer a:visited {
 }
 
 .order-list {
-  padding-left: 1.1rem;
+  padding-left: 1.4rem;
   margin-inline: auto;
+  -webkit-margin-after: 1.2rem;
+          margin-block-end: 1.2rem;
 }
 .order-list li::marker {
   font-size: 1.5em;
@@ -623,6 +557,11 @@ footer a:visited {
 }
 .pick-cake-container h2 {
   text-align: center;
+}
+@media screen and (min-width: 800px) {
+  .pick-cake-container h2 {
+    text-align: left;
+  }
 }
 
 .order-item-container {
@@ -705,6 +644,10 @@ footer a:visited {
 
 .confirm-form {
   color: var(--accent);
+}
+.confirm-form h2 {
+  -webkit-margin-after: 0.8rem;
+          margin-block-end: 0.8rem;
 }
 .confirm-form .form-desc {
   -webkit-margin-after: 1.2em;

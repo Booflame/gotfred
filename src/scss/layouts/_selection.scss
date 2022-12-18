@@ -51,7 +51,7 @@
     grid-template-columns: 1fr;
     gap: 1rem;
 
-    @media screen and (min-width: 600px) {
+    @media screen and (min-width: 800px) {
         grid-template-columns: repeat(auto-fit, minmax(30rem, 1fr));
         gap: 1.4rem;
     }
@@ -80,7 +80,7 @@
     grid-template-columns: repeat(2, 1fr);
     gap: 1.2rem;
 
-    @media screen and (min-width: 600px) {
+    @media screen and (min-width: 800px) {
         grid-template-columns: repeat(3, 1fr);
         gap: 3rem;
     }
