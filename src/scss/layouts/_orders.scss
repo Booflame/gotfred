@@ -73,9 +73,6 @@
         >*{
             font-style: italic;
         }
-        p{
-            padding-inline-start: .6em;
-        }
     }
 
     &-total{
@@ -85,7 +82,6 @@
         h3{
             font-size: 1.4rem;
             font-weight: bold;
-            padding-inline-start: .6rem;
         }
 
         p{
@@ -94,9 +90,10 @@
         }
     }
 }
+
 .order-button{
     cursor: pointer;
-    font-size: 2.5rem;
+    font-size: 2rem;
     font-weight: bolder;
     border-radius: 3rem;
     border: 2px solid var(--accent);
@@ -109,5 +106,18 @@
         justify-content: center;
         align-items: center;
         margin-block-start: 1.4rem;
+    }
+}
+.confirm-form{
+
+    textarea{
+        resize: none;
+        border-color: var(--accent);
+        width: 100%;
+        padding: .2em .4em;
+
+        &::placeholder{
+            color: var(--accent);
+        }
     }
 }

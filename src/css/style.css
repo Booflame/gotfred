@@ -341,10 +341,8 @@ header .wrapper > :last-child {
 footer {
   min-height: 100px;
   background-image: url(../assets/images/footerbg.png);
-  background-color: transparent;
   padding-block: 2rem;
   color: var(--accent);
-  text-decoration: none;
   margin-top: 10px;
 }
 
@@ -658,10 +656,6 @@ footer a:visited {
 .order-overview-container > * {
   font-style: italic;
 }
-.order-overview-container p {
-  -webkit-padding-start: 0.6em;
-          padding-inline-start: 0.6em;
-}
 .order-overview-total {
   display: flex;
   justify-content: space-between;
@@ -669,8 +663,6 @@ footer a:visited {
 .order-overview-total h3 {
   font-size: 1.4rem;
   font-weight: bold;
-  -webkit-padding-start: 0.6rem;
-          padding-inline-start: 0.6rem;
 }
 .order-overview-total p {
   font-style: italic;
@@ -680,7 +672,7 @@ footer a:visited {
 
 .order-button {
   cursor: pointer;
-  font-size: 2.5rem;
+  font-size: 2rem;
   font-weight: bolder;
   border-radius: 3rem;
   border: 2px solid var(--accent);
@@ -696,28 +688,20 @@ footer a:visited {
           margin-block-start: 1.4rem;
 }
 
-form input, form textarea {
-  width: 60%;
-  padding-block: 0.3em;
-  -webkit-padding-start: 0.3em;
-          padding-inline-start: 0.3em;
+.confirm-form textarea {
+  resize: none;
+  border-color: var(--accent);
+  width: 100%;
+  padding: 0.2em 0.4em;
 }
-form .radio-wrapper {
-  margin-block: 1.4rem;
+.confirm-form textarea::-moz-placeholder {
+  color: var(--accent);
 }
-form .radio-wrapper label {
-  background-color: lightblue;
-  border-radius: 10px;
-  padding: 10px 20px;
+.confirm-form textarea:-ms-input-placeholder {
+  color: var(--accent);
 }
-form .radio-wrapper input {
-  display: none;
-}
-form .radio-wrapper input:checked ~ label {
-  background-color: aquamarine;
-}
-form h2 {
-  font-size: 1.2rem;
+.confirm-form textarea::placeholder {
+  color: var(--accent);
 }
 
 .banner {

@@ -6,10 +6,12 @@ export default function OrderPage() {
 
     const navigate = useNavigate();
     const maxAmount = 10;
+    
     const [items, setItems] = useState([]);
     const [petiteItems, setPetiteItems] = useState([]);
     const [listOfItems, setListOfItems] = useState([]);
-    const [price, setPrice] = useState(null)
+    const [price, setPrice] = useState(0)
+    const [date, setDate] = useState("")
 
     useEffect(() =>{
         async function getData() {
@@ -46,11 +48,21 @@ export default function OrderPage() {
 
         setPrice(newPrice * 48);
     }
+
+    function handleChange(e) {
+        
+        setDate(e.target.value)
+    }
     
     function handleSubmit(e) {
         e.preventDefault();
         navigate("/Confirm", {
-            state: [listOfItems, price]
+            state: {
+                listOfItems: listOfItems,
+                price: price,
+                date: date
+            }
+
         })
     }
 
@@ -86,7 +98,7 @@ export default function OrderPage() {
                     </section>
                     <section>
                         <h2>2. Vælg dato for afhenting</h2>
-                        <input type="date"/>
+                        <input onChange={(e) => handleChange(e)} type="date"/>
                         <h3>Valgt afgentinsdato:</h3>
                         <p>dag måned år</p>
                     </section>
