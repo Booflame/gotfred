@@ -1,1 +1,120 @@
 @use '../util' as u;
+
+
+.season {
+    position: relative;
+}
+
+.imagebottom {
+    position: relative;
+
+}
+
+.imagetop {
+    position: absolute;
+    top: 100px;
+}
+
+.seasontitle {
+    font-weight: 500;
+    color: #452333;
+    font-size: 40px;
+    position: absolute;
+    top: 45px;
+    left: 130px;
+    z-index: 2;
+}
+
+.seasoncake {
+    font-weight: 300;
+    color: #452333;
+    font-size: 40px;
+    text-align: center;
+    z-index: 2;
+    position: absolute;
+    top: 360px;
+    left: 110px;
+}
+
+.seasontext {
+    color: #452333;
+    position: absolute;
+    top: 410px;
+    left: 50px
+}
+
+
+
+.btn-sortiment {
+    background-color: white;
+    color: #452333;
+    font-size: 15px;
+    font-weight: 500;
+    padding: 5px 10px;
+    border-radius: 50px;
+    border: solid 2px #452333;
+    margin: 10px 0px;
+    cursor: pointer;
+    z-index: 2;
+    position: absolute;
+    top: 450px;
+    left: 100px;
+}
+
+.btn-bestil {
+    background-color: white;
+    color: #452333;
+    font-size: 15px;
+    font-weight: 500;
+    padding: 5px 10px;
+    border-radius: 50px;
+    border: solid 2px #452333;
+    margin: 10px 0px;
+    cursor: pointer;
+    z-index: 2;
+    position: absolute;
+    top: 520px;
+    left: 108px;
+}
+
+.ellertxt {
+    position: absolute;
+    left: 175px;
+    top: 500px;
+    color: #452333;
+}
+
+.stemning {
+    z-index: -1;
+    position: absolute;
+    top: 550px;
+}
+
+.openinghours {
+    width: 250px;
+    height: 105px;
+    background-color: var(--bg);
+    border: solid 2px var(--accent);
+    margin: 0 auto;
+    margin-top: 50px;
+}
+
+.phantom {
+    height: 300px;
+}
+
+.opentxt {
+    font-size: 12px;
+    font-weight: 500;
+    text-align: center;
+    padding: 2px;
+    margin-top: 3px;
+    color: var(--accent);
+}
+
+.opentitle {
+    font-size: 15px;
+    font-weight: 300;
+    text-align: center;
+    color: var(--accent);
+}
