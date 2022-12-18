@@ -40,6 +40,7 @@ export default function OrderPage() {
             setListOfItems(updatedList)
         }
     }
+    
     function handleSubmit(e) {
         e.preventDefault();
         navigate("/Confirm", {

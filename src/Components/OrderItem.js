@@ -1,9 +1,7 @@
 import { useState } from "react";
 
 export default function Orderitem (props){
-
     const [count, setCount] = useState(0);
-
     function adjustCount(amount) {
         setCount(currentCount => {
             if(currentCount === 0 && amount === -1){
