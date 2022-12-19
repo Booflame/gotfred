@@ -28,9 +28,13 @@ export default function Orderitem (props){
                 <div className="order-item-content">
                     <h3>{props.name}</h3>
                     <div className="order-item-amount">
-                        <button type="button" onClick={(e) => {adjustCount(-1); props.clickEvent(e)}}>-</button>
+                        <button className="counter-btn" type="button" onClick={(e) => {adjustCount(-1); props.clickEvent(e)}}>
+                            <svg width="30" height="30"><use href="#icon-minus-circle"></use></svg>
+                        </button>
                         <span>{count}</span>
-                        <button type="button" onClick={(e) => {adjustCount(+1); props.clickEvent(e)}}>+</button>
+                        <button className="counter-btn" type="button" onClick={(e) => {adjustCount(+1); props.clickEvent(e)}}>
+                            <svg width="30" height="30"><use href="#icon-plus-circle"></use></svg>
+                        </button>
                     </div>
                 </div>
             </div>

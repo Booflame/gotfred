@@ -56,6 +56,15 @@
     }
 }
 
+.counter-btn{
+    border: none;
+    background-color: transparent;
+
+    svg{
+        fill: var(--accent);
+    }
+}
+
 .order-overview{
     
     &-section{

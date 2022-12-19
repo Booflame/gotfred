@@ -201,7 +201,7 @@ h1, h2, h3 {
   -webkit-margin-after: 0.8rem;
           margin-block-end: 0.8rem;
 }
-.section-intro p {
+.section-intro .intro-text {
   max-width: 72ch;
   margin-inline: auto;
   -webkit-margin-after: 1rem;
@@ -452,21 +452,26 @@ footer a:visited {
   color: #fff;
   font-size: 2.2rem;
   text-decoration: none;
+  background-size: 100%;
+}
+@media screen and (min-width: 800px) {
+  .selection-wrapper .selection-link {
+    padding-block: 5rem;
+    background-repeat: no-repeat;
+    background-size: cover;
+  }
 }
 .selection-wrapper .cakes {
   background-image: url(../assets/images/cakes.jpg);
   background-position: center;
-  background-size: 100%;
 }
 .selection-wrapper .drinks {
   background-image: url(../assets/images/drinks.jpg);
   background-position: 30% 65%;
-  background-size: 100%;
 }
 .selection-wrapper .vendors {
   background-image: url(../assets/images/vendors.jpg);
   background-position: 30% 65%;
-  background-size: 100%;
 }
 
 .price-section {
@@ -485,6 +490,8 @@ footer a:visited {
   display: grid;
   grid-template-columns: 1fr;
   gap: 1rem;
+  -webkit-margin-after: 1rem;
+          margin-block-end: 1rem;
 }
 @media screen and (min-width: 800px) {
   .price-container {
@@ -568,14 +575,14 @@ footer a:visited {
   margin-inline: 0;
 }
 
-.vendor-image {
+.full-image {
   aspect-ratio: 6/5;
   -o-object-fit: cover;
      object-fit: cover;
   -webkit-margin-after: 2rem;
           margin-block-end: 2rem;
 }
-.vendor-image-bottom {
+.full-image-bottom {
   -o-object-position: bottom;
      object-position: bottom;
 }
@@ -635,6 +642,14 @@ footer a:visited {
   justify-content: center;
   align-items: center;
   gap: 0.5rem;
+}
+
+.counter-btn {
+  border: none;
+  background-color: transparent;
+}
+.counter-btn svg {
+  fill: var(--accent);
 }
 
 .order-overview-section {

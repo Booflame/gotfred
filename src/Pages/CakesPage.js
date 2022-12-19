@@ -60,9 +60,12 @@ export default function MenuPage() {
                     <div className="title-box">
                         <h2>Petite Mix</h2>
                     </div>
-                    <p>Vores petite mix gælder kun forudbestilling og består af fire mindre, men lige så lækre mundfulde. </p>
+                    <div className="price-container">
+                        <Priceitem name="Petitemix" price="145"/>
+                    </div>
+                    <p className="intro-text">Vores petite mix gælder kun forudbestilling og består af fire mindre, men lige så lækre mundfulde. </p>
                     <img className="petitemix-img" src={petitemix} alt="petitemix"/>
-                    <p>Bestil dem i en pakke af mindst 10 og glæd dine gæster, kolleger eller familie med lidt til den søde tand. Vi anbefaler 2-3 stk. per person.</p>
+                    <p className="intro-text">Bestil dem i en pakke af mindst 10 og glæd dine gæster, kolleger eller familie med lidt til den søde tand. Vi anbefaler 2-3 stk. per person.</p>
                     <div className="petite-menu-container">
                         {petiteItems.map((item, index) => (
                             <Menuitem name={item.acf.name} image={item.acf.image} desc={item.acf.desc} key={index}/>

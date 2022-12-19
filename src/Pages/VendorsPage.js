@@ -15,7 +15,7 @@ export default function VendorsPage() {
                         <div className="title-box">
                             <h2>Mood Coffee</h2>
                         </div>
-                        <img className="vendor-image" src={moodcoffee} alt="kaffeblend" />
+                        <img className="full-image" src={moodcoffee} alt="kaffeblend" />
                         <div className="wrapper">    
                             <p>Ligesom Gotfred, er Mood Coffee Roasters en virksomhed der går op i at være nede på jorden.
                                 De holder deres fokus på det simple og det vigtigste - at lave god kaffe.
@@ -28,7 +28,7 @@ export default function VendorsPage() {
                         <div className="title-box">
                             <h2>Le Lune Ceramics</h2>
                         </div>
-                        <img className="vendor-image" src={leluneceramics} alt="keramikkop" />
+                        <img className="full-image" src={leluneceramics} alt="keramikkop" />
                         <div className="wrapper">
                             <p>Når du bestiller en kaffe hos Gotfred Aarhus, får du den serveret i de smukkeste krus fra Le Lune Ceramics.
                                 Den håndlavede keramik lavet af Caroline på eget værksted, er unikke og håndmalede kreationer som kun laves i begrænset opslag.
@@ -40,7 +40,7 @@ export default function VendorsPage() {
                         <div className="title-box">
                             <h2>Bryggeriet Æ</h2>
                         </div>
-                        <img className="vendor-image vendor-image-bottom" src={bryggerietae} alt="læskedrikke" />
+                        <img className="full-image full-image-bottom" src={bryggerietae} alt="læskedrikke" />
                         <div className="wrapper">
                             <p>I vores kølemontre finder du friske lemonader og æblebrus fra Bryggeriet Æ.
                                 Bryggeriet Æ producerer deres moste fra fynske æbler, hvor det fynske klima og jordbunden gør æbletræer glade. Alt er lavet med ærlighed og kærlighed.
