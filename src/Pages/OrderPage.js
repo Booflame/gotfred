@@ -19,7 +19,7 @@ export default function OrderPage() {
             const res = await fetch(url);
             const data = await res.json();
 
-            const itemData = data.filter(e => !e.acf.cake_type.includes("petite"))
+            const itemData = data.filter(e => !e.acf.cake_type.includes("petitemix"))
             const petiteItemData = data.filter(e => e.acf.cake_type.includes("petitemix-group"))
 
             setItems(itemData)
@@ -34,19 +34,34 @@ export default function OrderPage() {
         let updatedList = [...listOfItems];
         const index = updatedList.findIndex(o => o.name === itemName)
 
+        // If the name of the object is not in the list, create a new object to the list
         if(index === -1){
             setListOfItems(updatedList = [...listOfItems, {name: itemName, amount: quantity}])
+        // Else it just update the amount of the object
         } else{
             updatedList[index].amount = quantity
             setListOfItems(updatedList)
         }
 
-        const newPrice = listOfItems.reduce((acc, obj) => {
-            const key = parseInt(obj.amount)
-            return acc += key
+        // Looping through all objects that is not the petitemix and add all the amounts to one number
+        const totalSum = listOfItems.reduce((acc, obj) => {
+            if(obj.name === "petitemix") {
+                return acc += 0;
+            }
+            const num = parseInt(obj.amount)
+            return acc += num
         }, 0)
+        const cakePrice = 48 * totalSum;
 
-        setPrice(newPrice * 48);
+        let petitemixPrice = 0;
+
+        if(listOfItems.find((obj) => obj.name === "petitemix")){
+            petitemixPrice = 145 * parseInt(listOfItems.find((obj) => obj.name === "petitemix").amount);
+        }
+
+        const newPrice = cakePrice + petitemixPrice;
+
+        setPrice(newPrice);
     }
 
     function handleChange(e) {
@@ -113,7 +128,12 @@ export default function OrderPage() {
                         {listOfItems.map((item, index) => (
                             <div className="order-overview-container" key={index}>
                                 <p>{item.name}</p>
-                                <span>x{item.amount}</span>
+                                {
+                                    item.name === "petitemix" ?  
+                                    <span>145 kr. x {item.amount}</span> 
+                                    :
+                                    <span>48 kr. x {item.amount}</span> 
+                                }
                             </div>
                         ))}
                         <hr />
