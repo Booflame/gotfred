@@ -91,7 +91,6 @@ export default function OrderPage() {
                             </p>
                         </div>
                     </div>
-                    
                 </section>
                 <form onSubmit={handleSubmit} className="">
                     <section className="pick-cake-container">
