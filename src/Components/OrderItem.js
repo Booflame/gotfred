@@ -1,9 +1,7 @@
-import { useRef, useState } from "react";
+import { useState } from "react";
 
 export default function Orderitem (props){
     const [count, setCount] = useState(0);
-    const countRef = useRef(null)
-    const nameRef = useRef(null)
 
     function adjustCount(amount) {
         setCount(currentCount => {
@@ -28,12 +26,12 @@ export default function Orderitem (props){
             <div className="order-item-container">
                 <img className="order-item-image" src={image} alt={props.name} />
                 <div className="order-item-content">
-                    <h3 ref={nameRef}>{props.name}</h3>
+                    <h3>{props.name}</h3>
                     <div className="order-item-amount">
                         <button className="counter-btn" type="button" onClick={(e) => {adjustCount(-1); props.clickEvent(e)}}>
                             <svg width="30" height="30"><use href="#icon-minus-circle"></use></svg>
                         </button>
-                        <span ref={countRef}>{count}</span>
+                        <span>{count}</span>
                         <button className="counter-btn" type="button" onClick={(e) => {adjustCount(+1); props.clickEvent(e)}}>
                             <svg width="30" height="30"><use href="#icon-plus-circle"></use></svg>
                         </button>
