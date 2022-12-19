@@ -33,13 +33,28 @@ h1,h2,h3 {
     max-width: 80rem;
 }
 
+.big-wrapper {
+
+    @media screen and (min-width: 800px) {
+        margin-inline: auto;
+        padding-inline: 1.5rem;
+        width: 100%;
+        max-width: 80rem;
+
+        .wrapper{
+            max-width: 100%;
+            padding-inline: 0;
+        }
+    }
+} 
+
 .grid-d2{
     display: grid;
     grid-template-columns: 1fr;
 
     @media screen and (min-width: 800px) {
         grid-template-columns: repeat(2, 1fr);
-        gap: 2rem;
+        column-gap: 2rem;
     } 
 }
 

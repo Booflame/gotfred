@@ -166,6 +166,19 @@ h1, h2, h3 {
   max-width: 80rem;
 }
 
+@media screen and (min-width: 800px) {
+  .big-wrapper {
+    margin-inline: auto;
+    padding-inline: 1.5rem;
+    width: 100%;
+    max-width: 80rem;
+  }
+  .big-wrapper .wrapper {
+    max-width: 100%;
+    padding-inline: 0;
+  }
+}
+
 .grid-d2 {
   display: grid;
   grid-template-columns: 1fr;
@@ -173,7 +186,8 @@ h1, h2, h3 {
 @media screen and (min-width: 800px) {
   .grid-d2 {
     grid-template-columns: repeat(2, 1fr);
-    gap: 2rem;
+    -moz-column-gap: 2rem;
+         column-gap: 2rem;
   }
 }
 
@@ -423,6 +437,12 @@ footer a:visited {
   flex-direction: column;
   gap: 2rem;
 }
+@media screen and (min-width: 800px) {
+  .selection-wrapper {
+    flex-direction: row;
+    margin-top: 5rem;
+  }
+}
 .selection-wrapper .selection-link {
   display: inline-block;
   width: 100%;
@@ -457,7 +477,8 @@ footer a:visited {
   font-size: 1.6rem;
   text-align: center;
   color: var(--accent);
-  grid-column: 1/-1;
+  -webkit-margin-after: 1.2rem;
+          margin-block-end: 1.2rem;
 }
 
 .price-container {
@@ -507,8 +528,14 @@ footer a:visited {
      object-position: 50% 60%;
 }
 
+.petitemix-img {
+  -webkit-margin-after: 1rem;
+          margin-block-end: 1rem;
+}
+
 .petite-menu-container {
-  padding-block: 2rem;
+  -webkit-padding-before: 2rem;
+          padding-block-start: 2rem;
   display: grid;
   grid-template-columns: repeat(2, 1fr);
   gap: 1.2rem;
@@ -539,6 +566,22 @@ footer a:visited {
 }
 .menu-item .menu-item-desc {
   margin-inline: 0;
+}
+
+.vendor-image {
+  aspect-ratio: 6/5;
+  -o-object-fit: cover;
+     object-fit: cover;
+  -webkit-margin-after: 2rem;
+          margin-block-end: 2rem;
+}
+.vendor-image-bottom {
+  -o-object-position: bottom;
+     object-position: bottom;
+}
+
+.vendor-link {
+  color: var(--alt-text);
 }
 
 .order-list {
