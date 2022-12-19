@@ -1,14 +1,14 @@
 import { useEffect, useState } from "react"
 import { useNavigate } from "react-router-dom";
 import Orderitem from "../Components/OrderItem";
+import PetitemixImage from "../assets/images/petite-mix.jpeg"
 
 export default function OrderPage() {
 
     const navigate = useNavigate();
     const maxAmount = 10;
-    
+
     const [items, setItems] = useState([]);
-    const [petiteItems, setPetiteItems] = useState([]);
     const [listOfItems, setListOfItems] = useState([]);
     const [price, setPrice] = useState(0)
     const [date, setDate] = useState("")
@@ -20,11 +20,10 @@ export default function OrderPage() {
             const data = await res.json();
 
             const itemData = data.filter(e => !e.acf.cake_type.includes("petitemix"))
-            const petiteItemData = data.filter(e => e.acf.cake_type.includes("petitemix-group"))
 
             setItems(itemData)
-            setPetiteItems(petiteItemData)
         }
+
         getData();
     }, []);
 
@@ -51,8 +50,8 @@ export default function OrderPage() {
             const num = parseInt(obj.amount)
             return acc += num
         }, 0)
-        const cakePrice = 48 * totalSum;
 
+        const cakePrice = 48 * totalSum;
         let petitemixPrice = 0;
 
         if(listOfItems.find((obj) => obj.name === "petitemix")){
@@ -60,7 +59,7 @@ export default function OrderPage() {
         }
 
         const newPrice = cakePrice + petitemixPrice;
-
+        
         setPrice(newPrice);
     }
 
@@ -113,9 +112,7 @@ export default function OrderPage() {
                         {items.map((item, index) => (
                             <Orderitem name={item.acf.name} image={item.acf.image} max={maxAmount} key={index} clickEvent={(e) => handleclick(e)}/>
                         ))}
-                        {petiteItems.map((item, index) => (
-                            <Orderitem name={item.acf.name} image={item.acf.image} max={maxAmount} key={index} clickEvent={(e) => handleclick(e)}/>
-                        ))}
+                        <Orderitem name="petitemix" image={PetitemixImage} max={5} clickEvent={(e) => handleclick(e)} />
                     </section>
                     <section>
                         <h2>2. Vælg dato for afhenting</h2>
