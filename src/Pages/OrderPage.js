@@ -15,7 +15,7 @@ export default function OrderPage() {
 
     useEffect(() => {
         async function getData() {
-            const url = "http://wordpress.headless-gotfred.nillermanden.dk/wp-json/wp/v2/posts?_embed&per_page=20";
+            const url = "https://wordpress.headless-gotfred.nillermanden.dk/wp-json/wp/v2/posts?_embed&per_page=20";
             const res = await fetch(url);
             const data = await res.json();
 
@@ -108,12 +108,14 @@ export default function OrderPage() {
             <form onSubmit={handleSubmit} className="">
                 <div className="order-texture">
                     <div className="wrapper">
-                        <section className="pick-cake-container">
+                        <section className="pick-cake-section">
                             <h2>1. Vælg dine kager</h2>
-                            {items.map((item, index) => (
-                                <Orderitem name={item.acf.name} image={item.acf.order_image ? item.acf.order_image : item.acf.image} max={maxAmount} key={index} clickEvent={(e) => handleclick(e)} />
-                            ))}
-                            <Orderitem name="petitemix" image={PetitemixImage} max={5} clickEvent={(e) => handleclick(e)} />
+                            <div className="pick-cake-container">
+                                {items.map((item, index) => (
+                                    <Orderitem name={item.acf.name} image={item.acf.order_image ? item.acf.order_image : item.acf.image} max={maxAmount} key={index} clickEvent={(e) => handleclick(e)} />
+                                ))}
+                                <Orderitem name="petitemix" image={PetitemixImage} max={5} clickEvent={(e) => handleclick(e)} />
+                            </div>
                         </section>
                     </div>
                 </div>

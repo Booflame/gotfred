@@ -680,6 +680,12 @@ footer a:visited {
      object-position: bottom;
 }
 
+@media screen and (min-width: 800px) {
+  .desktop-image-none {
+    display: none;
+  }
+}
+
 .vendor-link {
   color: var(--alt-text);
 }
@@ -695,24 +701,30 @@ footer a:visited {
   line-height: 1;
 }
 
-.pick-cake-container {
+.pick-cake-section {
   display: flex;
   flex-direction: column;
   gap: 2rem;
   -webkit-margin-after: 2rem;
           margin-block-end: 2rem;
 }
-.pick-cake-container h2 {
+.pick-cake-section h2 {
   text-align: center;
 }
-@media screen and (min-width: 800px) {
-  .pick-cake-container h2 {
-    text-align: left;
-  }
+
+.pick-cake-container {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 1.5rem;
 }
 
 .order-texture {
   background-image: url(../assets/images/texture_kager_1.png);
+}
+@media screen and (min-width: 800px) {
+  .order-texture {
+    background-image: none;
+  }
 }
 
 .order-item-container {
@@ -869,6 +881,8 @@ footer a:visited {
      object-fit: fill;
 }
 .banner-img img {
+  -o-object-position: bottom;
+     object-position: bottom;
   -o-object-fit: fill;
      object-fit: fill;
 }

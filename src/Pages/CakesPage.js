@@ -12,7 +12,7 @@ export default function MenuPage() {
 
     useEffect(() => {
         async function getData() {
-            const url = "http://wordpress.headless-gotfred.nillermanden.dk/wp-json/wp/v2/posts?_embed&per_page=20";
+            const url = "https://wordpress.headless-gotfred.nillermanden.dk/wp-json/wp/v2/posts?_embed&per_page=20";
             const res = await fetch(url);
             const data = await res.json();
 
@@ -29,7 +29,7 @@ export default function MenuPage() {
 
     return (
         <>
-            <Banner name="Kager" image="kager_banner1" />
+            <Banner name="Kager" />
             <div className="wrapper">
                 <section className="section-intro">
                     <div className="title-box">

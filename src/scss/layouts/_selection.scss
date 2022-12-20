@@ -154,6 +154,12 @@
         object-position: bottom;
     }
 }
+.desktop-image-none{
+
+    @media screen and (min-width: 800px) {
+        display: none;
+    } 
+}
 
 .vendor-link{
     color: var(--alt-text)

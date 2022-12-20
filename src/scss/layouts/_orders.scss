@@ -9,7 +9,7 @@
     }
 }
 
-.pick-cake-container {
+.pick-cake-section {
     display: flex;
     flex-direction: column;
     gap: 2rem;
@@ -18,15 +18,20 @@
 
     h2 {
         text-align: center;
-
-        @media screen and (min-width: 800px) {
-            text-align: left
-        }
     }
+}
+.pick-cake-container{
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 1.5rem;
 }
 
 .order-texture {
     background-image: url(../assets/images/texture_kager_1.png);
+
+    @media screen and (min-width: 800px) {
+        background-image: none;
+    } 
 }
 
 .order-item {

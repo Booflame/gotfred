@@ -8,7 +8,7 @@ export default function VendorsPage() {
 
     return (
         <>
-            <Banner name="Leverandører" image="banner_kage" />
+            <Banner name="Leverandører"/>
             <div className="big-wrapper">
                 <div className="grid-d2">
                     <section className="section-intro">
