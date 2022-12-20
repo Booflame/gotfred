@@ -13,7 +13,7 @@ export default function OrderPage() {
     const [price, setPrice] = useState(0);
     const [date, setDate] = useState("");
 
-    useEffect(() =>{
+    useEffect(() => {
         async function getData() {
             const url = "http://wordpress.headless-gotfred.nillermanden.dk/wp-json/wp/v2/posts?_embed&per_page=20";
             const res = await fetch(url);
@@ -33,38 +33,38 @@ export default function OrderPage() {
         const index = updatedList.findIndex(o => o.name === itemName);
 
         // If the name of the object is not in the list, create a new object to the list
-        if(index === -1){
-            setListOfItems(updatedList = [...listOfItems, {name: itemName, amount: quantity}])
-        // Else it just update the amount of the object
-        } else{
+        if (index === -1) {
+            setListOfItems(updatedList = [...listOfItems, { name: itemName, amount: quantity }])
+            // Else it just update the amount of the object
+        } else {
             updatedList[index].amount = quantity;
             setListOfItems(updatedList)
         }
 
         // Looping through all objects that is not the petitemix and add all the amounts to one number
         const totalSum = listOfItems.reduce((acc, obj) => {
-            if(obj.name === "petitemix") {
+            if (obj.name === "petitemix") {
                 return acc += 0;
             }
             const num = parseInt(obj.amount);
             return acc += num;
         }, 0)
-        
+
         const cakePrice = 48 * totalSum;
         let petitemixPrice = 0;
-        
-        if(listOfItems.find((obj) => obj.name === "petitemix")){
+
+        if (listOfItems.find((obj) => obj.name === "petitemix")) {
             petitemixPrice = 145 * parseInt(listOfItems.find((obj) => obj.name === "petitemix").amount);
         }
 
-        const newPrice = cakePrice + petitemixPrice;  
+        const newPrice = cakePrice + petitemixPrice;
         setPrice(newPrice);
     }
 
     function handleChange(e) {
         setDate(e.target.value)
     }
-    
+
     function handleSubmit(e) {
         e.preventDefault();
         navigate("/Confirm", {
@@ -77,7 +77,7 @@ export default function OrderPage() {
         })
     }
 
-    return(
+    return (
         <>
             <div className="wrapper">
                 <section className="section-intro">
@@ -107,14 +107,16 @@ export default function OrderPage() {
                 <form onSubmit={handleSubmit} className="">
                     <section className="pick-cake-container">
                         <h2>1. Vælg dine kager</h2>
-                        {items.map((item, index) => (
-                            <Orderitem name={item.acf.name} image={item.acf.order_image ? item.acf.order_image : item.acf.image} max={maxAmount} key={index} clickEvent={(e) => handleclick(e)}/>
-                        ))}
-                        <Orderitem name="petitemix" image={PetitemixImage} max={5} clickEvent={(e) => handleclick(e)} />
+                        <div className="order_texture">
+                            {items.map((item, index) => (
+                                <Orderitem name={item.acf.name} image={item.acf.order_image ? item.acf.order_image : item.acf.image} max={maxAmount} key={index} clickEvent={(e) => handleclick(e)} />
+                            ))}
+                            <Orderitem name="petitemix" image={PetitemixImage} max={5} clickEvent={(e) => handleclick(e)} />
+                        </div>
                     </section>
                     <section>
                         <h2>2. Vælg dato for afhenting</h2>
-                        <input onChange={(e) => handleChange(e)} type="date"/>
+                        <input onChange={(e) => handleChange(e)} type="date" />
                         <h3>Valgt afgentinsdato:</h3>
                         <p>dag måned år</p>
                     </section>
@@ -124,10 +126,10 @@ export default function OrderPage() {
                             <div className="order-overview-container" key={index}>
                                 <p>{item.name}</p>
                                 {
-                                    item.name === "petitemix" ?  
-                                    <span>145 kr. x {item.amount}</span> 
-                                    :
-                                    <span>48 kr. x {item.amount}</span> 
+                                    item.name === "petitemix" ?
+                                        <span>145 kr. x {item.amount}</span>
+                                        :
+                                        <span>48 kr. x {item.amount}</span>
                                 }
                             </div>
                         ))}
