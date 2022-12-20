@@ -15,7 +15,7 @@ export default function OrderPage() {
 
     useEffect(() => {
         async function getData() {
-            const url = "https://wordpress.headless-gotfred.nillermanden.dk/wp-json/wp/v2/posts?_embed&per_page=20";
+            const url = "https://gotfredaarhus.fastmultimedia.dk/wp-json/wp/v2/posts?_embed&per_page=20";
             const res = await fetch(url);
             const data = await res.json();
 
