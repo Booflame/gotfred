@@ -10,12 +10,12 @@ export default function MenuPage() {
     const [petiteItems, setPetiteItems] = useState([])
     const [seasonalItem, setSeasonalItem] = useState([])
 
-    useEffect(() =>{
+    useEffect(() => {
         async function getData() {
             const url = "http://wordpress.headless-gotfred.nillermanden.dk/wp-json/wp/v2/posts?_embed&per_page=20";
             const res = await fetch(url);
             const data = await res.json();
-            
+
             const seasonalData = data.filter(e => e.acf.cake_type.includes("seasonal-cake"))
             const itemData = data.filter(e => e.acf.cake_type.includes("portions-cake"))
             const PetiteItemData = data.filter(e => e.acf.cake_type.includes("petitemix-cake"))
@@ -27,9 +27,9 @@ export default function MenuPage() {
         getData()
     }, []);
 
-    return(
+    return (
         <>
-            <Banner name="Kager" image="banner_kage"/>
+            <Banner name="Kager" image="kager_banner1" />
             <div className="wrapper">
                 <section className="section-intro">
                     <div className="title-box">
@@ -40,20 +40,20 @@ export default function MenuPage() {
                 <section className="price-section">
                     <h3>Priser</h3>
                     <div className="price-container">
-                        <Priceitem name="Én kage" price="48"/>
-                        <Priceitem name="Kaffe & kage" price="83"/>
-                        <Priceitem name="Mix box 4" price="188"/>
-                        <Priceitem name="Mix box 6" price="280"/>
+                        <Priceitem name="Én kage" price="48" />
+                        <Priceitem name="Kaffe & kage" price="83" />
+                        <Priceitem name="Mix box 4" price="188" />
+                        <Priceitem name="Mix box 6" price="280" />
                     </div>
                 </section>
                 <div className="limited-menu-container">
                     {seasonalItem.map((item, index) => (
-                        <Menuitem name={item.acf.name} image={item.acf.image} desc={item.acf.desc} key={index}/>
+                        <Menuitem name={item.acf.name} image={item.acf.image} desc={item.acf.desc} key={index} />
                     ))}
                 </div>
                 <div className="menu-container">
                     {items.map((item, index) => (
-                        <Menuitem name={item.acf.name} image={item.acf.image} desc={item.acf.desc} key={index}/>
+                        <Menuitem name={item.acf.name} image={item.acf.image} desc={item.acf.desc} key={index} />
                     ))}
                 </div>
                 <section className="section-intro">
@@ -61,14 +61,14 @@ export default function MenuPage() {
                         <h2>Petite Mix</h2>
                     </div>
                     <div className="price-container">
-                        <Priceitem name="Petitemix" price="145"/>
+                        <Priceitem name="Petitemix" price="145" />
                     </div>
                     <p className="intro-text">Vores petite mix gælder kun forudbestilling og består af fire mindre, men lige så lækre mundfulde. </p>
-                    <img className="petitemix-img" src={petitemix} alt="petitemix"/>
+                    <img className="petitemix-img" src={petitemix} alt="petitemix" />
                     <p className="intro-text">Bestil dem i en pakke af mindst 10 og glæd dine gæster, kolleger eller familie med lidt til den søde tand. Vi anbefaler 2-3 stk. per person.</p>
                     <div className="petite-menu-container">
                         {petiteItems.map((item, index) => (
-                            <Menuitem name={item.acf.name} image={item.acf.image} desc={item.acf.desc} key={index}/>
+                            <Menuitem name={item.acf.name} image={item.acf.image} desc={item.acf.desc} key={index} />
                         ))}
                     </div>
                 </section>

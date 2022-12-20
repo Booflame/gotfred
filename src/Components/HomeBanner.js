@@ -1,4 +1,4 @@
-import homepagebanner from "../assets/images/homepagebanner.png";
+import homebanner1 from "../assets/images/homebanner1.png";
 
 export default function HomeBanner() {
 
@@ -6,7 +6,7 @@ export default function HomeBanner() {
         <>
             <div className="banner">
                 <picture className="banner-img">
-                    <img src={homepagebanner} alt="banner" />
+                    <img src={homebanner1} alt="banner" />
                 </picture>
             </div>
         </>
