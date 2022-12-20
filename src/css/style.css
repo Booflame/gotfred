@@ -203,9 +203,6 @@ h3 {
   -webkit-margin-after: 0.8rem;
           margin-block-end: 0.8rem;
 }
-.section-intro p {
-  text-align: center;
-}
 .section-intro .intro-text {
   max-width: 72ch;
   margin-inline: auto;
@@ -347,15 +344,29 @@ footer {
   }
 }
 
+@media screen and (min-width: 800px) {
+  .footer-container {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    justify-items: center;
+  }
+}
+
 .icons {
   display: flex;
 }
 
 #instagram-icon {
+  display: block;
+}
+#instagram-icon img {
   width: 40%;
 }
 
 #kontrol-icon {
+  display: block;
+}
+#kontrol-icon img {
   width: 40%;
 }
 
@@ -487,6 +498,12 @@ footer a:visited {
 }
 .settingimages img {
   aspect-ratio: 1;
+}
+
+.insta-tag {
+  text-align: center;
+  -webkit-margin-after: 1rem;
+          margin-block-end: 1rem;
 }
 
 .instapics-grid {

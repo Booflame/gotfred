@@ -11,16 +11,33 @@ footer {
   }
 }
 
+.footer-container{
+
+  @media screen and (min-width: 800px) {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    justify-items: center;
+  }
+}
+
 .icons {
   display: flex;
 }
 
 #instagram-icon {
-  width: 40%;
+  display: block;
+
+  img{
+    width: 40%;
+  }
 }
 
 #kontrol-icon {
-  width: 40%;
+  display: block;
+
+  img{
+    width: 40%;
+  }
 }
 
 footer a {
@@ -30,4 +47,4 @@ footer a {
 
 footer a:visited {
   color: var(--accent);
-}
+}  

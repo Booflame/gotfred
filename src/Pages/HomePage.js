@@ -21,8 +21,8 @@ export default function HomePage() {
                     <div className="title-box title-box-home">
                         <h2>Velkommen til Gotfred Aarhus</h2>
                     </div>
-                    <p>Vi er et lille pâtisserie i Aarhus midtby, der specialiserer sig i at lave fine portionskager af højeste kvalitet. Her er autencitet og jordnærhed en del af vores identitet.</p>
-                    <p>Besøg vores café i Havnegade, hvor der er plads til hygge og nærvær. Nyd en varm kop kaffe, en kold lemonade og giv den søde tand en oplevelse med vores speciallavede kager.</p>
+                    <p className="intro-text">Vi er et lille pâtisserie i Aarhus midtby, der specialiserer sig i at lave fine portionskager af højeste kvalitet. Her er autencitet og jordnærhed en del af vores identitet.</p>
+                    <p className="intro-text">Besøg vores café i Havnegade, hvor der er plads til hygge og nærvær. Nyd en varm kop kaffe, en kold lemonade og giv den søde tand en oplevelse med vores speciallavede kager.</p>
                 </section>
                 <div className="settingimages">
                     <img src={hpimage1} alt="cafeen"></img>
@@ -59,7 +59,7 @@ export default function HomePage() {
                     <div className="title-box title-box-home">
                         <h2>Besøg vores Instagram</h2>
                     </div>
-                    <p>@gotfred.aarhus</p>
+                    <p className="insta-tag">@gotfred.aarhus</p>
                     <div className="instapics-grid">
                         <img src={insta4} alt="newyear"></img>
                         <img src={insta1} alt="team"></img>
