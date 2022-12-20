@@ -10,8 +10,8 @@ export default function OrderPage() {
 
     const [items, setItems] = useState([]);
     const [listOfItems, setListOfItems] = useState([]);
-    const [price, setPrice] = useState(0)
-    const [date, setDate] = useState("")
+    const [price, setPrice] = useState(0);
+    const [date, setDate] = useState("");
 
     useEffect(() =>{
         async function getData() {
@@ -19,11 +19,10 @@ export default function OrderPage() {
             const res = await fetch(url);
             const data = await res.json();
 
-            const itemData = data.filter(e => !e.acf.cake_type.includes("petitemix"))
+            const itemData = data.filter(e => !e.acf.cake_type.includes("petitemix"));
 
-            setItems(itemData)
+            setItems(itemData);
         }
-
         getData();
     }, []);
 
@@ -31,14 +30,14 @@ export default function OrderPage() {
         const quantity = e.target.parentElement.children[1].textContent;
         const itemName = e.target.parentElement.parentElement.children[0].textContent;
         let updatedList = [...listOfItems];
-        const index = updatedList.findIndex(o => o.name === itemName)
+        const index = updatedList.findIndex(o => o.name === itemName);
 
         // If the name of the object is not in the list, create a new object to the list
         if(index === -1){
             setListOfItems(updatedList = [...listOfItems, {name: itemName, amount: quantity}])
         // Else it just update the amount of the object
         } else{
-            updatedList[index].amount = quantity
+            updatedList[index].amount = quantity;
             setListOfItems(updatedList)
         }
 
@@ -47,19 +46,18 @@ export default function OrderPage() {
             if(obj.name === "petitemix") {
                 return acc += 0;
             }
-            const num = parseInt(obj.amount)
-            return acc += num
+            const num = parseInt(obj.amount);
+            return acc += num;
         }, 0)
-
+        
         const cakePrice = 48 * totalSum;
         let petitemixPrice = 0;
-
+        
         if(listOfItems.find((obj) => obj.name === "petitemix")){
             petitemixPrice = 145 * parseInt(listOfItems.find((obj) => obj.name === "petitemix").amount);
         }
 
-        const newPrice = cakePrice + petitemixPrice;
-        
+        const newPrice = cakePrice + petitemixPrice;  
         setPrice(newPrice);
     }
 
@@ -110,7 +108,7 @@ export default function OrderPage() {
                     <section className="pick-cake-container">
                         <h2>1. Vælg dine kager</h2>
                         {items.map((item, index) => (
-                            <Orderitem name={item.acf.name} image={item.acf.image} max={maxAmount} key={index} clickEvent={(e) => handleclick(e)}/>
+                            <Orderitem name={item.acf.name} image={item.acf.order_image ? item.acf.order_image : item.acf.image} max={maxAmount} key={index} clickEvent={(e) => handleclick(e)}/>
                         ))}
                         <Orderitem name="petitemix" image={PetitemixImage} max={5} clickEvent={(e) => handleclick(e)} />
                     </section>
