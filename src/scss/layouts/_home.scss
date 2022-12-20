@@ -2,31 +2,32 @@
     position: relative;
     isolation: isolate;
     overflow: hidden;
-    
-    .season-bg{
+
+    .season-bg {
         padding-block: 2.7rem 3.6rem;
         background-image: url(../assets/images/texturehomeyule.png);
     }
 
-    h2{
+    h2 {
         text-align: center;
         font-size: 2.5rem;
         color: var(--alt-text)
     }
 }
 
-.season-image{
+
+.season-image {
     margin-inline: auto;
 }
 
-.season-desc{
+.season-desc {
     width: 30ch;
     margin-inline: auto;
     margin-block-end: .8rem;
 }
 
-.season-btn{
-    cursor: pointer; 
+.season-btn {
+    cursor: pointer;
     display: inline-block;
     text-align: center;
     background-color: #fff;
@@ -38,7 +39,7 @@
     text-decoration: none;
 }
 
-.season-container{
+.season-container {
     display: grid;
     gap: .5rem;
     justify-items: center;
