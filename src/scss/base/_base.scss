@@ -16,7 +16,9 @@ html {
     background-color: var(--bg);
 }
 
-h1,h2,h3 {
+h1,
+h2,
+h3 {
     font-weight: 500;
 }
 
@@ -41,21 +43,21 @@ h1,h2,h3 {
         width: 100%;
         max-width: 80rem;
 
-        .wrapper{
+        .wrapper {
             max-width: 100%;
             padding-inline: 0;
         }
     }
-} 
+}
 
-.grid-d2{
+.grid-d2 {
     display: grid;
     grid-template-columns: 1fr;
 
     @media screen and (min-width: 800px) {
         grid-template-columns: repeat(2, 1fr);
         column-gap: 2rem;
-    } 
+    }
 }
 
 .section-intro {
@@ -97,12 +99,13 @@ h1,h2,h3 {
             transform: translate(-50%, 0);
         }
     }
-    &-home{
+
+    &-home {
 
         >* {
             font-size: 1.5rem;
 
-            &::after{
+            &::after {
                 width: 105%;
             }
         }
