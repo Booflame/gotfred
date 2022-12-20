@@ -633,6 +633,7 @@ footer a:visited {
 
 .order-texture {
   background-image: url(../assets/images/textur_kager_mobil.png);
+  background-size: contain;
 }
 
 .order-item-container {
