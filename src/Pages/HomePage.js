@@ -32,10 +32,12 @@ export default function HomePage() {
             </div>
             <section className="season-section">
                 <div className="season-bg">
-                    <h2>Season</h2>
-                    <img className="season-image" src={yulekrans1} alt="yulekrans" />
-                    <h2>Yulekrans</h2>
-                    <p className="season-desc">Gingerbread, vanilje pannacotta, glögg, kirsebaergel & chokolade chai creme.</p>
+                    <div>
+                        <h2>Season</h2>
+                        <img className="season-image" src={yulekrans1} alt="yulekrans" />
+                        <h2>Yulekrans</h2>
+                        <p className="season-desc">Gingerbread, vanilje pannacotta, glögg, kirsebaergel & chokolade chai creme.</p>
+                    </div>
                     <div className="season-container">
                         <NavLink to="/Selection" className="season-btn">Se hele vores sortiment</NavLink>
                         <p className="">eller</p>

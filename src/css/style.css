@@ -372,6 +372,8 @@ footer a:visited {
   position: relative;
   isolation: isolate;
   overflow: hidden;
+  -webkit-margin-after: 2rem;
+          margin-block-end: 2rem;
 }
 .season-section p {
   text-align: center;
@@ -379,6 +381,14 @@ footer a:visited {
 .season-section .season-bg {
   padding-block: 2.7rem 3.6rem;
   background-image: url(../assets/images/texturehomeyule.png);
+  display: grid;
+  grid-template-columns: repeat(1, 1fr);
+}
+@media screen and (min-width: 800px) {
+  .season-section .season-bg {
+    background-image: url(../assets/images/texture_homepage.png);
+    grid-template-columns: repeat(2, 1fr);
+  }
 }
 .season-section h2 {
   text-align: center;
@@ -388,6 +398,11 @@ footer a:visited {
 
 .season-image {
   margin-inline: auto;
+}
+@media screen and (min-width: 800px) {
+  .season-image {
+    border-radius: 10px;
+  }
 }
 
 .season-desc {
@@ -409,12 +424,24 @@ footer a:visited {
   border: 2px solid var(--alt-text);
   text-decoration: none;
 }
+@media screen and (min-width: 800px) {
+  .season-btn {
+    padding: 0.8rem 1.6rem;
+  }
+}
 
 .season-container {
   display: grid;
   gap: 0.5rem;
   justify-items: center;
   align-items: center;
+}
+@media screen and (min-width: 800px) {
+  .season-container {
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-end;
+  }
 }
 
 .stemning {
@@ -451,11 +478,11 @@ footer a:visited {
   grid-template-columns: repeat(1, 1fr);
   -webkit-margin-after: 2rem;
           margin-block-end: 2rem;
+  gap: 0.5rem;
 }
 @media screen and (min-width: 800px) {
   .settingimages {
     grid-template-columns: repeat(3, 1fr);
-    gap: 0.5rem;
   }
 }
 .settingimages img {
