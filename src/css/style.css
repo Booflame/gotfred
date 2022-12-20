@@ -460,6 +460,11 @@ footer a:visited {
   position: absolute;
   top: 580px;
 }
+@media screen and (min-width: 800px) {
+  .stemning {
+    display: none;
+  }
+}
 
 .openinghours {
   background-color: var(--bg);
