@@ -2,6 +2,11 @@ import { useState } from "react";
 import noImage from "../assets/images/no_image.png"
 
 export default function Orderitem (props){
+    let image = props.image;
+    if(props.image === undefined){
+        image = noImage;
+    }
+    
     const [count, setCount] = useState(0);
 
     function adjustCount(amount) {
@@ -16,12 +21,6 @@ export default function Orderitem (props){
             }
             return currentCount + amount
         })
-    }
-    
-    let image = props.image;
-
-    if(props.image === undefined){
-        image = noImage;
     }
 
     return(
