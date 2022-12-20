@@ -340,6 +340,12 @@ footer {
   color: var(--accent);
   margin-top: 2rem;
 }
+@media screen and (min-width: 800px) {
+  footer {
+    background-image: url(../assets/images/desktop_footer_bg.png);
+    background-size: contain;
+  }
+}
 
 .icons {
   display: flex;
@@ -441,8 +447,33 @@ footer a:visited {
 }
 
 .settingimages {
-  display: flex;
-  width: 33.33%;
+  display: grid;
+  grid-template-columns: repeat(1, 1fr);
+  -webkit-margin-after: 2rem;
+          margin-block-end: 2rem;
+}
+@media screen and (min-width: 800px) {
+  .settingimages {
+    grid-template-columns: repeat(3, 1fr);
+    gap: 0.5rem;
+  }
+}
+.settingimages img {
+  aspect-ratio: 1;
+}
+
+.instapics-grid {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 1rem;
+}
+@media screen and (min-width: 800px) {
+  .instapics-grid {
+    grid-template-columns: repeat(4, 1fr);
+  }
+}
+.instapics-grid img {
+  border-radius: 10px;
 }
 
 .selection-wrapper {
