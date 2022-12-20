@@ -88,7 +88,7 @@ export default function OrderPage() {
                     <p>Læs hvordan herunder og bestil dine kager hurtigt og nemt.</p>
                     <div className="grid-d2">
                         <div>
-                            <h3>Besttilingskrav</h3>
+                            <h3>Bestillingskrav</h3>
                             <ul className="order-list">
                                 <li>Bestilling skal ske senest dagen før.</li>
                                 <li>Bestil mindst to kager - maks 30.</li>
@@ -117,11 +117,11 @@ export default function OrderPage() {
                     <section>
                         <h2>2. Vælg dato for afhenting</h2>
                         <input onChange={(e) => handleChange(e)} type="date" />
-                        <h3>Valgt afgentinsdato:</h3>
+                        <h3>Valgt afhentningsdato:</h3>
                         <p>dag måned år</p>
                     </section>
                     <section className="order-overview-section">
-                        <h2>Orderoverblik:</h2>
+                        <h2>Ordreoverblik:</h2>
                         {listOfItems.map((item, index) => (
                             <div className="order-overview-container" key={index}>
                                 <p>{item.name}</p>
